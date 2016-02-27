@@ -1,3 +1,4 @@
 # Lorem-Ipsum
 1. Almir Hamza
-2. Haris Imamoviæ
+2. Haris ImamoviÄ‡
+3. Mirza Herdic
