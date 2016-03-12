@@ -24,10 +24,10 @@ Kako bi se korisniku pružio što jednostavniji način kreiranja konfiguracije, 
 Proces kupovine i plaćanja započinje kada korisnik kreira novu konfiguraciju ili odabere neku od ponuđenih komponenti. Pri samom pokretanju procesa plaćanja, vrši se provjera da li je trenutni kupac registrovani korisnik ili gost. Kupovina i plaćanje je omogućeno samo za registrovane korisnike, tako da se gost prvo preusmjeri na formu za registraciju, tek nakon uspješnog završetka tog procesa može se nastaviti. Korisniku se prezentuje forma na kojoj će odabrati da li želi dostavu, te način plaćanja (kartično, via internet servisi i sl.). U skladu sa izborom, od korisnika se očekuje da unese potrebne podatke koji će se dalje proslijediti odgovarajućim eksternim servisima. Naposlijetku, korisnik i sama administracija servisa dobivaju izvještaj o uspjeću transakcije. 
 
 #####Proces registracije korisnika na sistem
-*error 404*
+Korisnik može sam kreirati svoj račun ispunjavanjem forme u kojoj navodi svoje lične podatke i e-mail adresu što mu omogućava pristup svim funkcionalnostima sistema izuzev administratorskih mogućnosti. Sistem provjerava validnost svih unesenih podataka te u slučaju nekih nepravilnosti obavještava korisnika da je potrebno ispraviti unos. Ukoliko korisnik koji je samo gost pokuša izvršiti neku od akcija kojima nema pristup (poput ocjenjivanja usluge, zahtjeva za kupovinom proizvoda) sistem obavještava korisnika da je potrebno kreirati korisnički račun.
 
 #####Proces dostavljanja kupljenih proizvoda
-*error 404*
+Korisnik nakon odabira željenih proizvoda može uputiti zahtjev za dostavom proizvoda na željenu adresu. Sistem prima zahtjev te se spašava u red svih dostava kako bi neki od dostavljača, koji prvi bude u mogućnosti, mogao da obavi dostavu proizvoda korisniku.
 
 
 ###Funkcionalnosti 
