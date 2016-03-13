@@ -1,10 +1,10 @@
 ﻿#MASH Computer Shop
 
 ###Članovi tima
-1. Almir Hamza
-2. Haris Imamović
-3. Mirza Herdic
-4. Sunita Imamović
+**1.** Almir Hamza
+**2.** Haris Imamović
+**3.** Mirza Herdic
+**4.** Sunita Imamović
 
 ###Opis teme
 
@@ -35,7 +35,7 @@ Korisnik nakon odabira željenih proizvoda može uputiti zahtjev za dostavom pro
 - Kreiranje korisničkog računa
 - Mogućnost prijave u sistem sa različitim privilegijama 
 - Mogućnost pretraživanja komponenti
-- Mogućnost regleda informacija o pojedinačnim komponentama
+- Mogućnost pregleda informacija o pojedinačnim komponentama
 - Ocjenjivanje pojedinačnih komponenti
 - Odabir i kreiranje konfiguracije
 - Online plaćanje (via Paypal, bank account...)
@@ -50,8 +50,8 @@ Korisnik nakon odabira željenih proizvoda može uputiti zahtjev za dostavom pro
 
 ###Akteri
 
-1. **Gost** - gost je osoba koja ima mogućnost pregleda sadržaja bez interakcije sa dodatnim funkcionalnostima sistema poput kupovine proizvoda, naručivanja, ocjenjivanja usluge i komponenti.
-2. **Registrovani korisnik** - registovani korisnik je osoba koja ima mogućnost korištenja svih funkcionalnosti sistema u skladu sa njihovim pravima pristupa sistemu.
-3. **Administrator sistema** - administrator sistema je osoba koja ima odobrene privilegije za pristup podacima drugih korisnika, njegova glavna uloga je ažuriranje trenutnog asortimana proizvoda te pregled statističkih podataka o poslovanju.
-4. **Dostavljač** - dostavljač je osoba koja dostavlja proizvode kupcima na adresu po njihovoj želji.
-5. **Sistem za naplatu** - sistem za naplatu predstavlja eksterni sistem preko kojeg se izvršavaju usluge plaćanja što uključuje kartično plaćanje, plaćanje preko bankovnog računa, plaćanje preko online servisa.
+**1. Gost** - gost je osoba koja ima mogućnost pregleda sadržaja bez interakcije sa dodatnim funkcionalnostima sistema poput kupovine proizvoda, naručivanja, ocjenjivanja kako samih proizvoda tako i cjelokupne usluge.
+**2. Registrovani korisnik** - registovani korisnik je osoba koja ima mogućnost korištenja svih funkcionalnosti sistema u skladu sa njihovim pravima pristupa sistemu.
+**3. Administrator sistema** - administrator sistema je osoba koja ima odobrene privilegije za pristup podacima drugih korisnika, njegova glavna uloga je ažuriranje trenutnog asortimana proizvoda te pregled statističkih podataka o poslovanju.
+**4. Dostavljač** - dostavljač je osoba koja dostavlja proizvode kupcima na njihovu adresu.
+**5. Sistem za naplatu** - sistem za naplatu predstavlja eksterni sistem preko kojeg se izvršavaju usluge plaćanja što uključuje kartično plaćanje, plaćanje preko bankovnog računa, plaćanje preko online servisa...
