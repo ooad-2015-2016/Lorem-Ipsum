@@ -32,14 +32,14 @@ Korisnik nakon odabira željenih proizvoda može uputiti zahtjev za dostavom pro
 
 ###Funkcionalnosti 
 
-- Kreiranje korisničkog računa
+- Kreiranje korisničkog računa (uz mogućnost korištena kamere na uređaju za kreiranje profilne fotografije)
 - Mogućnost prijave u sistem sa različitim privilegijama 
 - Mogućnost pretraživanja komponenti
 - Mogućnost pregleda informacija o pojedinačnim komponentama
 - Ocjenjivanje pojedinačnih komponenti
 - Odabir i kreiranje konfiguracije
 - Online plaćanje (via Paypal, bank account...)
-- Plaćanje karticom
+- Plaćanje karticom (pomoću uređaja za očitavanje bankovnih kartica)
 - Mogućnost dostave kupljenih proizvoda
 - Ocjenjivanje usluge
 - Dodavanje novih proizvoda
