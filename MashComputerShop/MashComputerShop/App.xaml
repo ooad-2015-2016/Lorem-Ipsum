@@ -1,8 +1,8 @@
 ﻿<Application
-    x:Class="MASH_ComputerShop.App"
+    x:Class="MashComputerShop.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:MASH_ComputerShop"
+    xmlns:local="using:MashComputerShop"
     RequestedTheme="Light">
 
 </Application>
