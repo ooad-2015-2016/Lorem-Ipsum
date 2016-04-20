@@ -101,6 +101,9 @@
     <Compile Include="CustomUserControls\LargeTileButton.xaml.cs">
       <DependentUpon>LargeTileButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomUserControls\SignUpForm.xaml.cs">
+      <DependentUpon>SignUpForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -129,6 +132,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="CustomUserControls\LargeTileButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomUserControls\SignUpForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
