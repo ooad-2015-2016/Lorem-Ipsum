@@ -12,106 +12,30 @@
     
     <StackPanel x:ConnectionId='1' Name="backboardPanel">
 
-        <Border 
-            Margin="0, 0, 0, 20" 
-            Padding="3, 6, 3, 2"
-            BorderThickness="1" 
-            BorderBrush="White" 
-            Background="SteelBlue" 
-            CornerRadius="8">
-            <TextBox x:ConnectionId='7'
-                Name="NameTB"
-                Width="Auto"
-                Height="Auto"
-                BorderThickness="0"
-                Background="Transparent"
-                Foreground="White"
-                PlaceholderText="Ime"/>
-        </Border>
-        
-        <Border 
-            Margin="0, 0, 0, 20" 
-            Padding="3, 6, 3, 2"
-            BorderThickness="1" 
-            BorderBrush="White" 
-            Background="SteelBlue" 
-            CornerRadius="8">
-            <TextBox x:ConnectionId='6'
-                Name="SurnameTB"
-                Width="Auto"
-                Height="Auto"
-                BorderThickness="0"
-                Background="Transparent"
-                Foreground="White"
-                PlaceholderText="Prezime"/>
-        </Border>
-        
-        <Border 
-            Margin="0, 0, 0, 20" 
-            Padding="3, 6, 3, 2"
-            BorderThickness="1" 
-            BorderBrush="White" 
-            Background="SteelBlue" 
-            CornerRadius="8">
-            <TextBox x:ConnectionId='5'
-                Name="EmailTB"
-                Width="Auto"
-                Height="Auto"
-                BorderThickness="0"
-                Background="Transparent"
-                Foreground="White"
-                PlaceholderText="Email"/>
+        <Border Margin="0, 0, 0, 20" Padding="3" BorderThickness="1" BorderBrush="#ffffff" Background="#ffffff" CornerRadius="8">
+            <TextBox x:ConnectionId='7' Name="NameTB" BorderThickness="0" Background="Transparent" VerticalContentAlignment="Center" PlaceholderText="Ime" FontFamily="Roboto Light"                                       Padding="10, 8, 10, 0"/>
         </Border>
 
-        <Border 
-            Margin="0, 0, 0, 20" 
-            Padding="3, 6, 3, 2"
-            BorderThickness="1" 
-            BorderBrush="White" 
-            Background="SteelBlue" 
-            CornerRadius="8">
-            <TextBox x:ConnectionId='4'
-                Name="PasswordTB"
-                Width="Auto"
-                Height="Auto"
-                BorderThickness="0"
-                Background="Transparent"
-                Foreground="White"
-                PlaceholderText="Password"/>
+        <Border Margin="0, 0, 0, 20" Padding="3" BorderThickness="1" BorderBrush="#ffffff" Background="#ffffff" CornerRadius="8">
+            <TextBox x:ConnectionId='6' Name="SurnameTB" BorderThickness="0" Background="Transparent" VerticalContentAlignment="Center" PlaceholderText="Prezime" FontFamily="Roboto Light"                                       Padding="10, 8, 10, 0"/>
         </Border>
 
-        <Border 
-            Margin="0, 0, 0, 20" 
-            Padding="3, 6, 3, 2"
-            BorderThickness="1" 
-            BorderBrush="White" 
-            Background="SteelBlue" 
-            CornerRadius="8">
-            <TextBox x:ConnectionId='3'
-                Name="ConfirmPwTB"
-                Width="Auto"
-                Height="Auto"
-                BorderThickness="0"
-                Background="Transparent"
-                Foreground="White"
-                PlaceholderText="Potvrdi password"/>
+        <Border Margin="0, 0, 0, 20" Padding="3" BorderThickness="1" BorderBrush="#ffffff" Background="#ffffff" CornerRadius="8">
+            <TextBox x:ConnectionId='5' Name="EmailTB" BorderThickness="0" Background="Transparent" VerticalContentAlignment="Center" PlaceholderText="Email" FontFamily="Roboto Light"                                       Padding="10, 8, 10, 0"/>
         </Border>
 
-        <Border 
-            Padding="5"
-            BorderThickness="1" 
-            BorderBrush="White" 
-            Background="Green" 
-            CornerRadius="8">
-            <Button x:ConnectionId='2' 
-                Name="doneBtt"
-                Width="Auto"
-                Height="Auto"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Background="Green"
-                BorderBrush="Transparent"
-                Content="Registrirajte se"/>
+        <Border Margin="0, 0, 0, 20" Padding="3" BorderThickness="1" BorderBrush="#ffffff" Background="#ffffff" CornerRadius="8">
+            <TextBox x:ConnectionId='4' Name="PasswordTB" BorderThickness="0" Background="Transparent" VerticalContentAlignment="Center" PlaceholderText="Password" FontFamily="Roboto Light"                                       Padding="10, 8, 10, 0"/>
+        </Border>
+
+        <Border Margin="0, 0, 0, 20" Padding="3" BorderThickness="1" BorderBrush="#ffffff" Background="#ffffff" CornerRadius="8">
+            <TextBox x:ConnectionId='3' Name="ConfirmPwTB" BorderThickness="0" Background="Transparent" VerticalContentAlignment="Center" PlaceholderText="Potvrdite password" FontFamily="Roboto Light"                                       Padding="10, 8, 10, 0"/>
+        </Border>
+
+        <Border Padding="5" BorderThickness="1" BorderBrush="LawnGreen" Background="LawnGreen" CornerRadius="8">
+            <Button x:ConnectionId='2' Name="doneBtt" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="LawnGreen" BorderBrush="Transparent" FontFamily="Roboto Light">
+                Registrirajte se
+            </Button>
         </Border>
         
     </StackPanel>

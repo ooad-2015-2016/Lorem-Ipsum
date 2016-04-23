@@ -98,16 +98,25 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CreateConfiguration.xaml.cs">
+      <DependentUpon>CreateConfiguration.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomUserControls\LargeTileButton.xaml.cs">
       <DependentUpon>LargeTileButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="CustomUserControls\SignUpForm.xaml.cs">
       <DependentUpon>SignUpForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserProfilePage.xaml.cs">
+      <DependentUpon>UserProfilePage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -117,6 +126,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Icons\music.png" />
+    <Content Include="Assets\ProductImages\Processor\amdaseriescpu.png" />
+    <Content Include="Assets\ProductImages\Processor\amdathloncpu.jpg" />
+    <Content Include="Assets\ProductImages\Processor\amdsemproncpu.jpg" />
+    <Content Include="Assets\ProductImages\Processor\inteli5cpu.jpg" />
+    <Content Include="Assets\ProductImages\Processor\inteli7cpu.jpg" />
+    <Content Include="Assets\ProductImages\Processor\intelpentiumcpu.jpg" />
+    <Content Include="Assets\SideBarImages\CreateConfiguration.png" />
+    <Content Include="Assets\SideBarImages\Help.png" />
+    <Content Include="Assets\SideBarImages\SearchMagnfGlass.png" />
+    <Content Include="Assets\SideBarImages\Settings.png" />
+    <Content Include="Assets\SideBarImages\Toggle.png" />
+    <Content Include="Assets\SideBarImages\UserIcon.png" />
+    <Content Include="Assets\SideBarImages\ViewItems.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -131,6 +153,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="CreateConfiguration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CustomUserControls\LargeTileButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -139,11 +165,20 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="UserProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

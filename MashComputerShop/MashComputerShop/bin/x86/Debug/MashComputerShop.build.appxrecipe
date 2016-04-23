@@ -345,6 +345,30 @@
     <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject\MashComputerShop\MashComputerShop\Assets\Icons\music.png">
       <PackagePath>Assets\Icons\music.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject\MashComputerShop\MashComputerShop\Assets\ProductImages\Processor\amdaseriescpu.png">
+      <PackagePath>Assets\ProductImages\Processor\amdaseriescpu.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject\MashComputerShop\MashComputerShop\Assets\SideBarImages\CreateConfiguration.png">
+      <PackagePath>Assets\SideBarImages\CreateConfiguration.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject\MashComputerShop\MashComputerShop\Assets\SideBarImages\Help.png">
+      <PackagePath>Assets\SideBarImages\Help.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject\MashComputerShop\MashComputerShop\Assets\SideBarImages\SearchMagnfGlass.png">
+      <PackagePath>Assets\SideBarImages\SearchMagnfGlass.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject\MashComputerShop\MashComputerShop\Assets\SideBarImages\Settings.png">
+      <PackagePath>Assets\SideBarImages\Settings.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject\MashComputerShop\MashComputerShop\Assets\SideBarImages\Toggle.png">
+      <PackagePath>Assets\SideBarImages\Toggle.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject\MashComputerShop\MashComputerShop\Assets\SideBarImages\UserIcon.png">
+      <PackagePath>Assets\SideBarImages\UserIcon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject\MashComputerShop\MashComputerShop\Assets\SideBarImages\ViewItems.png">
+      <PackagePath>Assets\SideBarImages\ViewItems.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject\MashComputerShop\MashComputerShop\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
@@ -371,6 +395,21 @@
     <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject\MashComputerShop\MashComputerShop\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject\MashComputerShop\MashComputerShop\Assets\ProductImages\Processor\amdathloncpu.jpg">
+      <PackagePath>Assets\ProductImages\Processor\amdathloncpu.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject\MashComputerShop\MashComputerShop\Assets\ProductImages\Processor\amdsemproncpu.jpg">
+      <PackagePath>Assets\ProductImages\Processor\amdsemproncpu.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject\MashComputerShop\MashComputerShop\Assets\ProductImages\Processor\inteli5cpu.jpg">
+      <PackagePath>Assets\ProductImages\Processor\inteli5cpu.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject\MashComputerShop\MashComputerShop\Assets\ProductImages\Processor\inteli7cpu.jpg">
+      <PackagePath>Assets\ProductImages\Processor\inteli7cpu.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject\MashComputerShop\MashComputerShop\Assets\ProductImages\Processor\intelpentiumcpu.jpg">
+      <PackagePath>Assets\ProductImages\Processor\intelpentiumcpu.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject\MashComputerShop\MashComputerShop\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>

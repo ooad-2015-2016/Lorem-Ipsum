@@ -25,6 +25,37 @@ namespace MashComputerShop
         public MainPage()
         {
             this.InitializeComponent();
+
+            // pri prvom otvaranju postavlja se home page kao kontekst
+            mainContentFrame.Navigate(typeof(HomePage));
         }
+
+        // Events for sideBarNavigation
+        private void toggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            SideBar.IsPaneOpen = !SideBar.IsPaneOpen;
+        }
+
+        internal void changeTopbarTitle(string title)
+        {
+            TopbarTitle.Text = title;
+        }
+
+
+        // Metoda za navigaciju i izmjenu konteksta glavne stranice 
+        private void changeMainPageContext()
+        {
+            if (viewSelector.IsSelected) { mainContentFrame.Navigate(typeof(HomePage)); changeTopbarTitle(viewSelectorLabel.Text);  }
+            else if (creatConfigSelector.IsSelected) { mainContentFrame.Navigate(typeof(CreateConfiguration)); changeTopbarTitle(creatConfigSelectorLabel.Text); }
+            else if (userProfileSelector.IsSelected) { mainContentFrame.Navigate(typeof(UserProfilePage)); changeTopbarTitle(userProfileSelectorLabel.Text); }
+            else if(searchSelector.IsSelected) { mainContentFrame.Navigate(typeof(HomePage)); changeTopbarTitle(searchSelectorLabel.Text); }
+        }
+
+        // Event u kojem obrađujemo naredbe za navigaciju po stranicama
+        private void navigationListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            changeMainPageContext();
+        }
+
     }
 }

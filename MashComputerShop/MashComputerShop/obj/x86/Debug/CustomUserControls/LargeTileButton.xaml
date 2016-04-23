@@ -11,44 +11,20 @@
     d:DesignWidth="200">
 
     <Grid>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!-- Main Button -->
-        <Border x:ConnectionId='2' 
-            Name="bttOutline" 
-            Grid.Row="0"
-            Background="CadetBlue"
-            CornerRadius="10">
-            
-            <Button x:ConnectionId='4' 
-                x:Name="tileButton"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Margin="4"
-                Background="CadetBlue"
-                UseSystemFocusVisuals="False"
-                BorderThickness="0">
-
-                <Image x:ConnectionId='5' 
-                    x:Name="tileIcon"
-                    VerticalAlignment="Stretch" 
-                    HorizontalAlignment="Stretch"/>
-                
+        <Border x:ConnectionId='2' Name="bttOutline" Grid.Row="0" Background="#5aa2ea" CornerRadius="10">
+            <Button x:ConnectionId='4' x:Name="tileButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="4" Background="#5aa2ea" BorderThickness="0">
+                <Image x:ConnectionId='5' x:Name="tileIcon" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
             </Button>
         </Border>
         
         <!-- Main Button Label -->
-        <TextBlock x:ConnectionId='3'
-            x:Name="tileLabel"
-            Grid.Row="1"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            TextWrapping="Wrap"
-            Foreground="Black"/>
+        <TextBlock x:ConnectionId='3' x:Name="tileLabel" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="Black" FontFamily="Roboto Light"/>
     </Grid>
     
 </UserControl>

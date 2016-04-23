@@ -31,6 +31,12 @@ namespace MashComputerShop.CustomUserControls
             set { backboardPanel.Background = value; }
         }
 
+        private void TextBoxBackground_GotFocus(object sender, RoutedEventArgs e)
+        {
+            NameTB.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(1, 2, 3, 4));
+        }
+
+
         // Property za postavljanje boje textboxova
         // To Be implemented Soon
 

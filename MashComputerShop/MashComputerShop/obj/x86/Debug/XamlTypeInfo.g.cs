@@ -132,25 +132,31 @@ namespace MashComputerShop.MashComputerShop_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[8];
-            _typeNameTable[0] = "MashComputerShop.CustomUserControls.LargeTileButton";
-            _typeNameTable[1] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[2] = "Windows.UI.Xaml.Media.SolidColorBrush";
-            _typeNameTable[3] = "Windows.UI.Xaml.Media.ImageSource";
-            _typeNameTable[4] = "String";
-            _typeNameTable[5] = "MashComputerShop.CustomUserControls.SignUpForm";
-            _typeNameTable[6] = "MashComputerShop.MainPage";
-            _typeNameTable[7] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable = new string[11];
+            _typeNameTable[0] = "MashComputerShop.CreateConfiguration";
+            _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[3] = "MashComputerShop.CustomUserControls.LargeTileButton";
+            _typeNameTable[4] = "Windows.UI.Xaml.Media.SolidColorBrush";
+            _typeNameTable[5] = "Windows.UI.Xaml.Media.ImageSource";
+            _typeNameTable[6] = "String";
+            _typeNameTable[7] = "MashComputerShop.CustomUserControls.SignUpForm";
+            _typeNameTable[8] = "MashComputerShop.HomePage";
+            _typeNameTable[9] = "MashComputerShop.MainPage";
+            _typeNameTable[10] = "MashComputerShop.UserProfilePage";
 
-            _typeTable = new global::System.Type[8];
-            _typeTable[0] = typeof(global::MashComputerShop.CustomUserControls.LargeTileButton);
-            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[2] = typeof(global::Windows.UI.Xaml.Media.SolidColorBrush);
-            _typeTable[3] = typeof(global::Windows.UI.Xaml.Media.ImageSource);
-            _typeTable[4] = typeof(global::System.String);
-            _typeTable[5] = typeof(global::MashComputerShop.CustomUserControls.SignUpForm);
-            _typeTable[6] = typeof(global::MashComputerShop.MainPage);
-            _typeTable[7] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable = new global::System.Type[11];
+            _typeTable[0] = typeof(global::MashComputerShop.CreateConfiguration);
+            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[3] = typeof(global::MashComputerShop.CustomUserControls.LargeTileButton);
+            _typeTable[4] = typeof(global::Windows.UI.Xaml.Media.SolidColorBrush);
+            _typeTable[5] = typeof(global::Windows.UI.Xaml.Media.ImageSource);
+            _typeTable[6] = typeof(global::System.String);
+            _typeTable[7] = typeof(global::MashComputerShop.CustomUserControls.SignUpForm);
+            _typeTable[8] = typeof(global::MashComputerShop.HomePage);
+            _typeTable[9] = typeof(global::MashComputerShop.MainPage);
+            _typeTable[10] = typeof(global::MashComputerShop.UserProfilePage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -185,9 +191,12 @@ namespace MashComputerShop.MashComputerShop_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_LargeTileButton() { return new global::MashComputerShop.CustomUserControls.LargeTileButton(); }
-        private object Activate_5_SignUpForm() { return new global::MashComputerShop.CustomUserControls.SignUpForm(); }
-        private object Activate_6_MainPage() { return new global::MashComputerShop.MainPage(); }
+        private object Activate_0_CreateConfiguration() { return new global::MashComputerShop.CreateConfiguration(); }
+        private object Activate_3_LargeTileButton() { return new global::MashComputerShop.CustomUserControls.LargeTileButton(); }
+        private object Activate_7_SignUpForm() { return new global::MashComputerShop.CustomUserControls.SignUpForm(); }
+        private object Activate_8_HomePage() { return new global::MashComputerShop.HomePage(); }
+        private object Activate_9_MainPage() { return new global::MashComputerShop.MainPage(); }
+        private object Activate_10_UserProfilePage() { return new global::MashComputerShop.UserProfilePage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -199,9 +208,24 @@ namespace MashComputerShop.MashComputerShop_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  MashComputerShop.CustomUserControls.LargeTileButton
+            case 0:   //  MashComputerShop.CreateConfiguration
+                userType = new global::MashComputerShop.MashComputerShop_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_0_CreateConfiguration;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 1:   //  Windows.UI.Xaml.Controls.Page
+                xamlType = new global::MashComputerShop.MashComputerShop_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 2:   //  Windows.UI.Xaml.Controls.UserControl
+                xamlType = new global::MashComputerShop.MashComputerShop_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 3:   //  MashComputerShop.CustomUserControls.LargeTileButton
                 userType = new global::MashComputerShop.MashComputerShop_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_0_LargeTileButton;
+                userType.Activator = Activate_3_LargeTileButton;
                 userType.AddMemberName("ButtonColor");
                 userType.AddMemberName("IconSource");
                 userType.AddMemberName("Text");
@@ -209,39 +233,45 @@ namespace MashComputerShop.MashComputerShop_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 1:   //  Windows.UI.Xaml.Controls.UserControl
+            case 4:   //  Windows.UI.Xaml.Media.SolidColorBrush
                 xamlType = new global::MashComputerShop.MashComputerShop_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  Windows.UI.Xaml.Media.SolidColorBrush
+            case 5:   //  Windows.UI.Xaml.Media.ImageSource
                 xamlType = new global::MashComputerShop.MashComputerShop_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  Windows.UI.Xaml.Media.ImageSource
+            case 6:   //  String
                 xamlType = new global::MashComputerShop.MashComputerShop_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 4:   //  String
-                xamlType = new global::MashComputerShop.MashComputerShop_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 5:   //  MashComputerShop.CustomUserControls.SignUpForm
+            case 7:   //  MashComputerShop.CustomUserControls.SignUpForm
                 userType = new global::MashComputerShop.MashComputerShop_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_5_SignUpForm;
+                userType.Activator = Activate_7_SignUpForm;
                 userType.AddMemberName("FormColor");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 6:   //  MashComputerShop.MainPage
+            case 8:   //  MashComputerShop.HomePage
                 userType = new global::MashComputerShop.MashComputerShop_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_6_MainPage;
+                userType.Activator = Activate_8_HomePage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 7:   //  Windows.UI.Xaml.Controls.Page
-                xamlType = new global::MashComputerShop.MashComputerShop_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+            case 9:   //  MashComputerShop.MainPage
+                userType = new global::MashComputerShop.MashComputerShop_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_9_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 10:   //  MashComputerShop.UserProfilePage
+                userType = new global::MashComputerShop.MashComputerShop_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_10_UserProfilePage;
+                userType.SetIsLocalType();
+                xamlType = userType;
                 break;
             }
             return xamlType;
