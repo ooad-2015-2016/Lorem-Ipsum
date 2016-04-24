@@ -1,0 +1,279 @@
+﻿<Page
+    x:Class="MashComputerShop.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MashComputerShop"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <Grid Background="#f2f3f6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="45"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Search and Filter Bar -->
+        <Border Grid.ColumnSpan="3" BorderBrush="#d9dadd" BorderThickness="1" Background="#fbfbfc" Padding="0,0,0,1">
+            <Grid Background="#fbfbfc">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <ComboBox x:ConnectionId='17' Name="viewFilters" Grid.Column="1" BorderBrush="#d9dadd" VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="#aeb0b8">
+                    <ComboBoxItem Tag="L" IsSelected="True">Prikaz Liste</ComboBoxItem>
+                    <ComboBoxItem Tag="H">Prikaz Slike</ComboBoxItem>
+                </ComboBox>
+
+                <ComboBox x:ConnectionId='18' Name="sortFilters" Grid.Column="2" BorderBrush="#d9dadd" VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="#aeb0b8">
+                    <ComboBoxItem Tag="L" IsSelected="True">Najnovije</ComboBoxItem>
+                    <ComboBoxItem Tag="H">Najskuplje prvo</ComboBoxItem>
+                    <ComboBoxItem Tag="H">Najjeftinije prvo</ComboBoxItem>
+                </ComboBox>
+
+                <AutoSuggestBox x:ConnectionId='19' Name="productQueryBox" 
+                                Grid.Column="3" 
+                                Grid.ColumnSpan="2"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Center"
+                                BorderBrush="#d9dadd" 
+                                Foreground="#aeb0b8"     
+                                FontFamily="Roboto Thin"
+                                PlaceholderText="Unesite naziv komponente za pretragu" 
+                                QueryIcon="Find"
+                                                                         />
+
+            </Grid>
+        </Border>
+        
+        <!-- Scrollable view for list of components -->
+        <ScrollViewer Grid.Row="1" 
+                      Grid.Column="1" 
+                      Background="Transparent" 
+                      HorizontalAlignment="Stretch" 
+                      VerticalAlignment="Stretch"
+                      Margin="0, 5, 0 , 0"
+                      HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Auto">
+
+            <Grid Height="1200" HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- 1. element of the List -->
+                <Border Grid.Row="0" Grid.Column="0" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+                    <Grid Background="#fbfbfc">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="6*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="14"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image x:ConnectionId='15' Name="cpu1" Source="Assets\ProductImages\Processor\intelpentiumcpu.jpg" Grid.Row="1" Grid.Column="1"/>
+                        <TextBlock x:ConnectionId='16' Name="cpu1Name" FontFamily="Roboto Regular" Foreground="#767c83" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1">Intel Pentium vPro</TextBlock>
+                        <TextBlock FontFamily="Roboto Regular" Foreground="#5aa2ea" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1">320BAM</TextBlock>
+                    </Grid>
+                </Border>
+
+                <!-- 2. element of the List -->
+                <Border Grid.Row="0" Grid.Column="1" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+                    <Grid Background="#fbfbfc">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="6*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="14"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image x:ConnectionId='13' Name="cpu2" Source="Assets\ProductImages\Processor\inteli5cpu.jpg" Grid.Row="1" Grid.Column="1"/>
+                        <TextBlock x:ConnectionId='14' Name="cpu2Name" FontFamily="Roboto Regular" Foreground="#767c83" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1">Intel i5</TextBlock>
+                        <TextBlock FontFamily="Roboto Regular" Foreground="#5aa2ea" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1">450BAM</TextBlock>
+                    </Grid>
+                </Border>
+                
+                <!-- 3. element of the List -->
+                <Border Grid.Row="0" Grid.Column="2" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+                    <Grid Background="#fbfbfc">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="6*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="14"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image x:ConnectionId='11' Name="cpu3" Source="Assets\ProductImages\Processor\amdaseriescpu.png" Grid.Row="1" Grid.Column="1"/>
+                        <TextBlock x:ConnectionId='12' Name="cpu3Name" FontFamily="Roboto Regular" Foreground="#767c83" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1">AMD A8</TextBlock>
+                        <TextBlock FontFamily="Roboto Regular" Foreground="#5aa2ea" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1">230BAM</TextBlock>
+                    </Grid>
+                </Border>
+                
+                <!-- 4. element of the List -->
+                <Border  Grid.Row="0" Grid.Column="3" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+                    <Grid Background="#fbfbfc">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="6*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="14"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image x:ConnectionId='9' Name="cpu4" Source="Assets\ProductImages\Processor\inteli7cpu.jpg" Grid.Row="1" Grid.Column="1"/>
+                        <TextBlock x:ConnectionId='10' Name="cpu4Name" FontFamily="Roboto Regular" Foreground="#767c83" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1">Intel i7</TextBlock>
+                        <TextBlock FontFamily="Roboto Regular" Foreground="#5aa2ea" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1">550BAM</TextBlock>
+                    </Grid>
+                </Border>
+
+                <!-- 5. element of the List -->
+                <Border Grid.Row="1" Grid.Column="0" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1" >
+                    <Grid Background="#fbfbfc">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="6*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="14"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image x:ConnectionId='7' Name="cpu5" Source="Assets\ProductImages\Processor\amdathloncpu.jpg" Grid.Row="1" Grid.Column="1"/>
+                        <TextBlock x:ConnectionId='8' Name="cpu5Name" FontFamily="Roboto Regular" Foreground="#767c83" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1">AMD Athlon</TextBlock>
+                        <TextBlock FontFamily="Roboto Regular" Foreground="#5aa2ea" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1">370BAM</TextBlock>
+                    </Grid>
+                </Border>
+
+                <!-- 6. element of the List -->
+                <Border Grid.Row="1" Grid.Column="1" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+                    <Grid Background="#fbfbfc">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="6*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="14"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image x:ConnectionId='5' Name="cpu6" Source="Assets\ProductImages\Processor\amdsemproncpu.jpg" Grid.Row="1" Grid.Column="1"/>
+                        <TextBlock x:ConnectionId='6' Name="cpu6Name" FontFamily="Roboto Regular" Foreground="#767c83" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1">AMD Sempron</TextBlock>
+                        <TextBlock FontFamily="Roboto Regular" Foreground="#5aa2ea" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1">450BAM</TextBlock>
+                    </Grid>
+                </Border>
+
+                <!-- 7. element of the List -->
+                <Border Grid.Row="1" Grid.Column="2" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+                    <Grid Background="#fbfbfc">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="6*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="14"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image x:ConnectionId='3' Name="cpu7" Source="Assets\ProductImages\Processor\inteli5cpu.jpg" Grid.Row="1" Grid.Column="1"/>
+                        <TextBlock x:ConnectionId='4' Name="cpu7Name" FontFamily="Roboto Regular" Foreground="#767c83" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1">Intel i5</TextBlock>
+                        <TextBlock FontFamily="Roboto Regular" Foreground="#5aa2ea" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1">230BAM</TextBlock>
+                    </Grid>
+                </Border>
+
+                <!-- 8. element of the List -->
+                <Border Grid.Row="1" Grid.Column="3" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+                    <Grid Background="#fbfbfc">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="6*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="14"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image x:ConnectionId='1' Name="cpu8" Source="Assets\ProductImages\Processor\inteli7cpu.jpg" Grid.Row="1" Grid.Column="1"/>
+                        <TextBlock x:ConnectionId='2' Name="cpu8Name" FontFamily="Roboto Regular" Foreground="#767c83" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1">Intel i7</TextBlock>
+                        <TextBlock FontFamily="Roboto Regular" Foreground="#5aa2ea" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1">550BAM</TextBlock>
+                    </Grid>
+                </Border>
+
+            </Grid>  
+        </ScrollViewer>
+        
+        <!-- Footer -->
+        <Border Grid.Row="2" Grid.ColumnSpan="3" BorderBrush="#d9dadd" BorderThickness="1" Background="#fbfbfc"/>
+
+    </Grid>
+</Page>
+

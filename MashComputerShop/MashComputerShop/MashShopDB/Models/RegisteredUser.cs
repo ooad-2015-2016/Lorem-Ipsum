@@ -14,7 +14,7 @@ namespace MashComputerShop.MashShopDB.Models
         // Polja klase odgovaraju poljima u tabeli u bazi padataka
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int RegUserID { get { return UserID;  } set { UserID = value; } }
+        public int RegUserID { get { return UserID; } set { UserID = value; } }
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -33,6 +33,17 @@ namespace MashComputerShop.MashShopDB.Models
             Email = ""; TelephoneNumber = "";
             ProfileImage = null;
         }
+
+        public RegisteredUser(int id, string firstName, string lastName, string usrName, string pw, string email, string telNumber): base(id)
+        {
+            RegUserID = id;
+            FirstName = firstName; LastName = lastName;
+            Username = usrName; Password = pw;
+            Email = email;
+            TelephoneNumber = telNumber;
+            ProfileImage = null;
+        }
+        
 
     }
 }

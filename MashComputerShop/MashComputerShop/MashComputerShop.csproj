@@ -113,6 +113,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MashShopDB\Models\Administrator.cs" />
     <Compile Include="MashShopDB\Models\Guest.cs" />
     <Compile Include="MashShopDB\Models\MashShopDBContext.cs" />
     <Compile Include="MashShopDB\Models\Product.cs" />

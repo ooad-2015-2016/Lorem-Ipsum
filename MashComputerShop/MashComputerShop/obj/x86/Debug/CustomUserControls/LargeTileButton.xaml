@@ -1,0 +1,31 @@
+﻿<UserControl x:ConnectionId='1'
+    x:Name="largeTileButton"
+    x:Class="MashComputerShop.CustomUserControls.LargeTileButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MashComputerShop.CustomUserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="250"
+    d:DesignWidth="200">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Main Button -->
+        <Border x:ConnectionId='2' Name="bttOutline" Grid.Row="0" Background="#5aa2ea" CornerRadius="10">
+            <Button x:ConnectionId='4' x:Name="tileButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="4" Background="#5aa2ea" BorderThickness="0">
+                <Image x:ConnectionId='5' x:Name="tileIcon" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+            </Button>
+        </Border>
+        
+        <!-- Main Button Label -->
+        <TextBlock x:ConnectionId='3' x:Name="tileLabel" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="Black" FontFamily="Roboto Light"/>
+    </Grid>
+    
+</UserControl>
+

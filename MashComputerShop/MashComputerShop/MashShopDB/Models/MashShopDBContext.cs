@@ -13,6 +13,7 @@ namespace MashComputerShop.MashShopDB.Models
     {
         // Setovi koji sadrzi sve registrovane korisnike, sve proizvode
         public DbSet<RegisteredUser> AllRegisteredUsers { get; set; }
+        public DbSet<Administrator> AllAdministrators { get; set; }
         public DbSet<Product> AllProducts { get; set; }
 
 
@@ -31,6 +32,7 @@ namespace MashComputerShop.MashShopDB.Models
         {
             // postavljamo značenje "byte[]" u polju "ProfileImage"
             modelBuilder.Entity<RegisteredUser>().Property(p => p.ProfileImage).HasColumnType("image");
+            modelBuilder.Entity<Administrator>().Property(p => p.ProfileImage).HasColumnType("image");
         }
 
     }
