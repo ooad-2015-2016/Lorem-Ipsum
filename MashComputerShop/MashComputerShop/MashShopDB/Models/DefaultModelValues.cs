@@ -28,6 +28,32 @@ namespace MashComputerShop.MashShopDB.Models
             {
                 context.AllRegisteredUsers.AddRange(new RegisteredUser(0, "regUsr", "regUsr", "regUsr", "regUsr", "nan", ""));
             }
+            if (!context.CreditCards.Any())
+            {
+                context.CreditCards.AddRange(
+                new CreditCard()
+                {
+                    CardNumber = "378282246310005",
+                    ExpDate = new DateTime(2016, 1, 1),
+                    CardType = "American Express",
+                    PIN = 1234
+                }
+                );
+                context.SaveChanges();
+            }
+            if (!context.CreditCards.Any())
+            {
+                context.CreditCards.AddRange(
+                new Receipt()
+                {
+                    ReceiptID = 0,
+                    CardID = 0,
+                    CustomerID = 0,
+                    TotalPrice = 0.0
+                }
+                );
+                context.SaveChanges();
+            }
 
             context.SaveChanges();
         }
