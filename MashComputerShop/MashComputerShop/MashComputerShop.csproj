@@ -115,6 +115,7 @@
     </Compile>
     <Compile Include="MashShopDB\Models\Guest.cs" />
     <Compile Include="MashShopDB\Models\MashShopDBContext.cs" />
+    <Compile Include="MashShopDB\Models\Product.cs" />
     <Compile Include="MashShopDB\Models\RegisteredUser.cs" />
     <Compile Include="MashShopDB\Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

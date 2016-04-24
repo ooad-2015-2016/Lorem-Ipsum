@@ -11,8 +11,9 @@ namespace MashComputerShop.MashShopDB.Models
 {
     public class MashShopDBContext : DbContext
     {
-        // Set koji sadrzi sve registrovane korisnike
+        // Setovi koji sadrzi sve registrovane korisnike, sve proizvode
         public DbSet<RegisteredUser> AllRegisteredUsers { get; set; }
+        public DbSet<Product> AllProducts { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
