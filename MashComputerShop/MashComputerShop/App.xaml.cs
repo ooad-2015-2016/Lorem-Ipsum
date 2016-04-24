@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MashComputerShop.MashShopDB.Models;
+using Microsoft.Data.Entity;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -33,6 +35,14 @@ namespace MashComputerShop
                 Microsoft.ApplicationInsights.WindowsCollectors.Session);
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            /* Inicijalizaicja baze podataka za MASH ComputerShop
+            using(var db = new MashShopDB.Models.MashShopDBContext())
+            {
+                db.Database.ApplyMigrations();
+                DefaultModelValues.Initialize(db);
+            }
+            */
         }
 
         /// <summary>

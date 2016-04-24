@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Data.Entity;
 using Microsoft.Data.Sqlite;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace MashComputerShop.MashShopDB.Models
 {
@@ -14,6 +15,7 @@ namespace MashComputerShop.MashShopDB.Models
         // Polja klase odgovaraju poljima u tabeli Product u bazi podataka
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public int ProductID { get; set; } // Primary key u tabeli Product
 
         public string Name { get; set; }
@@ -23,7 +25,7 @@ namespace MashComputerShop.MashShopDB.Models
         public int Grade { get; set; }  // Ocjena od 1 do 5
 
         // Konstruktor
-        Product(int ProductID, string Name, double Price, string Description, int QuantityInStorage, int Grade) {
+        public Product(int ProductID, string Name, double Price, string Description, int QuantityInStorage, int Grade) {
             this.ProductID = ProductID;
             this.Name = Name;
             this.Price = Price;

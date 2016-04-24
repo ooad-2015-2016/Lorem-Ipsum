@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Data.Entity;
 using Microsoft.Data.Sqlite;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace MashComputerShop.MashShopDB.Models
 {
@@ -14,6 +15,7 @@ namespace MashComputerShop.MashShopDB.Models
         // Polja klase odgovaraju poljima u tabeli u bazi padataka
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public int RegUserID { get { return UserID; } set { UserID = value; } }
 
         public string FirstName { get; set; }
