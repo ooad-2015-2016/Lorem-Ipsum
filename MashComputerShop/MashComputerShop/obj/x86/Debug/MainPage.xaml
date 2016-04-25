@@ -10,7 +10,72 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+<<<<<<< HEAD
         
+=======
+        <!--SideBar Navigation Version 1.0
+        <SplitView Name="SideBar" DisplayMode="CompactOverlay" OpenPaneLength="200" PaneBackground="#03152d" Grid.Column="0">
+            <SplitView.Pane>
+
+                <Grid Name="SideBarButtons">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Button Name="toggleButton" Click="toggleButton_Click" Margin="4,0,0,0" VerticalAlignment="Center" Background="#03152d" Grid.Row="0">
+                        <Image Source="Assets\SideBarImages\Toggle.png" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Button>
+
+                    <StackPanel Grid.Row="1" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Name="viewButton" Margin="1,0,0,0" Background="#03152d">
+                                <Image Source="Assets\SideBarImages\ViewItems.png" Width="25" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Button>
+                            <TextBlock Margin="5" Foreground="#b8bdc8">Svi Proizvodi</TextBlock>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="searchButton" Margin="4,0,0,0" Background="#03152d" Click="searchButton_Click">
+                                <Image Source="Assets\SideBarImages\SearchMagnfGlass.png" Width="21" Height="21" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Button>
+                            <TextBlock Margin="5" Foreground="#b8bdc8">Pretraga</TextBlock>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="creatConfigButton" Margin="4,0,0,0" Background="#03152d" Click="creatConfigButton_Click">
+                                <Image Source="Assets\SideBarImages\CreateConfiguration.png" Width="21" Height="21" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Button>
+                            <TextBlock Margin="5" Foreground="#b8bdc8">Napravi Konfiguraciju</TextBlock>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="userProfileButton" Margin="4,0,0,0" Background="#03152d" Click="userProfileButton_Click">
+                                <Image Source="Assets\SideBarImages\UserIcon.png" Width="20" Height="21" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Button>
+                            <TextBlock Margin="5" Foreground="#b8bdc8">Korisnicki Profil</TextBlock>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="helpButton" Margin="4,0,0,0" Background="#03152d">
+                                <Image Source="Assets\SideBarImages\Help.png" Width="21" Height="21" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Button>
+                            <TextBlock Margin="5" Foreground="#b8bdc8">Pomoc</TextBlock>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="settingsButton" Margin="4,0,0,0" Background="#03152d">
+                                <Image Source="Assets\SideBarImages\Settings.png" Width="21" Height="21" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Button>
+                            <TextBlock Margin="5" Foreground="#b8bdc8">Postavke</TextBlock>
+                        </StackPanel>
+
+                    </StackPanel>
+                </Grid>
+            </SplitView.Pane>
+        -->
+
+>>>>>>> origin/master
         <!--SideBar Navigation Version 1.5 -->
         <SplitView x:ConnectionId='1' Name="SideBar" DisplayMode="CompactOverlay" OpenPaneLength="200" CompactPaneLength="45" PaneBackground="#03152d" Grid.Column="0">
 
@@ -78,8 +143,13 @@
                 
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
+<<<<<<< HEAD
                         <RowDefinition Height="45"/>
                         <RowDefinition Height="*"/>
+=======
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="10*"/>
+>>>>>>> origin/master
                     </Grid.RowDefinitions>
 
                     <!-- TopMenu Bar -->
@@ -89,7 +159,11 @@
                     </Grid>
 
                     <!-- Frame that wrapps pages that change depending on the chosen context -->
+<<<<<<< HEAD
                     <Frame x:ConnectionId='17' Name="mainContentFrame" Grid.Row="1"/>
+=======
+                    <Frame x:ConnectionId='17' Name="mainContentFrame" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+>>>>>>> origin/master
 
                 </Grid>
    

@@ -1,0 +1,13 @@
+Dijagram klasa Mash Computer Shop zadovoljava sve zahtjeve single responsibility principa iz razloga što su sve metode klasa specijalizirane za upravljanje osobinama odgovarajucih objekata, dok su funkcionalnosti viseg nivoa kao npr. rad sa bazom podataka, obavljanja složenih procesa kupovine i kreiranja konfiguracije izdvojene u posebne interfejse.
+
+
+Open closed princip je zadovoljen za klase na dijagramu. Izmjena pojedinacnih klasa ne zahtijeva promjene u ostatku sistema. Npr. posmatrajmo klase Product, ShoppingCart, BuyingSession i Payment. Promjena u samoj klasi Product ne uzrokuje promjenu u klasi ShoppingCart jer ta klasa samo privremeno cuva reference na proizvode pri cemu sam rad klase ShoppingCart nije odreden gradom objekta Product. Promjena servisa za placanje bi uzrokovala promjene u klasi ShoppingCart, no zbog postojanja posebnog interfejsa BuyingSession ovaj problem je izbjegnut. 
+
+
+Liskov princip zamjene zahtijeva da podtipovi moraju biti zamjenjivi njihovim osnovnim tipovima, ovaj princip nije ispunjen za klase Registered User i Admin User pošto Admin User ima karakteristicne funkcionalnosti koje Registered User ne može imati. Ovaj problem možemo riješiti tako što klasu Admin User necemo naslijediti iz klase Registered User nego direktno iz apstraktne klase User.
+
+
+Princip inverzije ovisnosti nalaže da moduli ne ovise od detalja vec od apstrakcija, klasu User bi trebalo implementirati kao interfejs što bi sprijecilo da prilikom izmjena klasa koje naslijeduju klasu User dode do promjena u ostatku sistema.
+
+
+Sve složenije funkcionalnosti za klase su omogucene putem interfejsa, primjena metoda definisanih u samim klasama je ogranicena na samo opisivanje objekata te klase.

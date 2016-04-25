@@ -44,6 +44,7 @@
                     <ComboBoxItem Tag="H">Najjeftinije prvo</ComboBoxItem>
                 </ComboBox>
 
+<<<<<<< HEAD
                 <AutoSuggestBox x:ConnectionId='19' Name="productQueryBox"
                                 BorderBrush="#d9dadd"
                                 BorderThickness="0"                        
@@ -51,6 +52,14 @@
                                 Grid.ColumnSpan="2"
                                 HorizontalAlignment="Stretch"
                                 VerticalAlignment="Center" 
+=======
+                <AutoSuggestBox x:ConnectionId='19' Name="productQueryBox" 
+                                Grid.Column="3" 
+                                Grid.ColumnSpan="2"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Center"
+                                BorderBrush="#d9dadd" 
+>>>>>>> origin/master
                                 Foreground="#aeb0b8"     
                                 FontFamily="Roboto Thin"
                                 PlaceholderText="Unesite naziv komponente za pretragu" 
@@ -62,14 +71,25 @@
         
         <!-- Scrollable view for list of components -->
         <ScrollViewer Grid.Row="1" 
+<<<<<<< HEAD
                       Grid.Column="0"
                       Grid.ColumnSpan="3"
                       Background="Transparent" 
+=======
+                      Grid.Column="1" 
+                      Background="Transparent" 
+                      HorizontalAlignment="Stretch" 
+                      VerticalAlignment="Stretch"
+>>>>>>> origin/master
                       Margin="0, 5, 0 , 0"
                       HorizontalScrollBarVisibility="Auto"
                       VerticalScrollBarVisibility="Auto">
 
+<<<<<<< HEAD
             <Grid Height="1200">
+=======
+            <Grid Height="1200" HorizontalAlignment="Stretch">
+>>>>>>> origin/master
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -82,12 +102,19 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
+<<<<<<< HEAD
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <!-- 1. element of the List -->
                 <Border Grid.Row="0" Grid.Column="1" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+=======
+                </Grid.ColumnDefinitions>
+
+                <!-- 1. element of the List -->
+                <Border Grid.Row="0" Grid.Column="0" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+>>>>>>> origin/master
                     <Grid Background="#fbfbfc">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -110,7 +137,11 @@
                 </Border>
 
                 <!-- 2. element of the List -->
+<<<<<<< HEAD
                 <Border Grid.Row="0" Grid.Column="2" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+=======
+                <Border Grid.Row="0" Grid.Column="1" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+>>>>>>> origin/master
                     <Grid Background="#fbfbfc">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -133,7 +164,11 @@
                 </Border>
                 
                 <!-- 3. element of the List -->
+<<<<<<< HEAD
                 <Border Grid.Row="0" Grid.Column="3" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+=======
+                <Border Grid.Row="0" Grid.Column="2" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+>>>>>>> origin/master
                     <Grid Background="#fbfbfc">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -156,7 +191,11 @@
                 </Border>
                 
                 <!-- 4. element of the List -->
+<<<<<<< HEAD
                 <Border  Grid.Row="0" Grid.Column="4" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+=======
+                <Border  Grid.Row="0" Grid.Column="3" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+>>>>>>> origin/master
                     <Grid Background="#fbfbfc">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -179,7 +218,11 @@
                 </Border>
 
                 <!-- 5. element of the List -->
+<<<<<<< HEAD
                 <Border Grid.Row="1" Grid.Column="1" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1" >
+=======
+                <Border Grid.Row="1" Grid.Column="0" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1" >
+>>>>>>> origin/master
                     <Grid Background="#fbfbfc">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -202,7 +245,11 @@
                 </Border>
 
                 <!-- 6. element of the List -->
+<<<<<<< HEAD
                 <Border Grid.Row="1" Grid.Column="2" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+=======
+                <Border Grid.Row="1" Grid.Column="1" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+>>>>>>> origin/master
                     <Grid Background="#fbfbfc">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -225,7 +272,11 @@
                 </Border>
 
                 <!-- 7. element of the List -->
+<<<<<<< HEAD
                 <Border Grid.Row="1" Grid.Column="3" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+=======
+                <Border Grid.Row="1" Grid.Column="2" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+>>>>>>> origin/master
                     <Grid Background="#fbfbfc">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -248,7 +299,11 @@
                 </Border>
 
                 <!-- 8. element of the List -->
+<<<<<<< HEAD
                 <Border Grid.Row="1" Grid.Column="4" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+=======
+                <Border Grid.Row="1" Grid.Column="3" BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1">
+>>>>>>> origin/master
                     <Grid Background="#fbfbfc">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>

@@ -36,8 +36,13 @@ namespace MashComputerShop.MashShopDB.Models
             JMBG = ""; Salary = 0; HireDate = DateTime.Today;
         }
 
+<<<<<<< HEAD
         public Administrator(int id, string firstName, string lastName, string jmbg, DateTime hireDate, Decimal salary,
             string usrName, string pw, string email, string telNumber) : base(id)
+=======
+        public Administrator(int id, string firstName, string lastName, string jmbg, DateTime hireDate, Decimal salary, 
+            string usrName, string pw, string email, string telNumber): base(id)
+>>>>>>> origin/master
         {
             AdminID = id;
             FirstName = firstName; LastName = lastName; JMBG = jmbg;

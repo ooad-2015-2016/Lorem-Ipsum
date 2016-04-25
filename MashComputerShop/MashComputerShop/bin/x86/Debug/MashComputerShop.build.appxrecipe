@@ -9,16 +9,27 @@
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>e1bfa4da-c5f4-407a-b6e5-88532fabf207</PackageIdentityName>
+<<<<<<< HEAD
     <IntermediateOutputPath>C:\Users\Almir\Desktop\Lorem-Ipsum\MashComputerShop\MashComputerShop\obj\x86\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\Almir\Desktop\Lorem-Ipsum\MashComputerShop\MashComputerShop\bin\x86\Debug\Core\AppxManifest.xml">
+=======
+    <IntermediateOutputPath>C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\obj\x86\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\bin\x86\Debug\Core\AppxManifest.xml">
+>>>>>>> origin/master
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <AppxPackagedFile Include="C:\Users\Almir\Desktop\Lorem-Ipsum\MashComputerShop\MashComputerShop\bin\x86\Debug\MashComputerShop.exe">
+=======
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\bin\x86\Debug\MashComputerShop.exe">
+>>>>>>> origin/master
       <PackagePath>entrypoint\MashComputerShop.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Almir\.nuget\packages\EntityFramework.Core\7.0.0-beta6\lib\dotnet\EntityFramework.Core.dll">
@@ -396,6 +407,7 @@
     <AppxPackagedFile Include="C:\Users\Almir\.nuget\packages\System.Xml.XmlSerializer\4.0.10\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
+<<<<<<< HEAD
     <AppxPackagedFile Include="C:\Users\Almir\Desktop\Lorem-Ipsum\MashComputerShop\MashComputerShop\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
     </AppxPackagedFile>
@@ -469,6 +481,81 @@
       <PackagePath>Assets\ProductImages\Processor\intelpentiumcpu.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Almir\Desktop\Lorem-Ipsum\MashComputerShop\MashComputerShop\Properties\Default.rd.xml">
+=======
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\ApplicationInsights.config">
+      <PackagePath>ApplicationInsights.config</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\Icons\music.png">
+      <PackagePath>Assets\Icons\music.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\ProductImages\Processor\amdaseriescpu.png">
+      <PackagePath>Assets\ProductImages\Processor\amdaseriescpu.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\SideBarImages\CreateConfiguration.png">
+      <PackagePath>Assets\SideBarImages\CreateConfiguration.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\SideBarImages\Help.png">
+      <PackagePath>Assets\SideBarImages\Help.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\SideBarImages\SearchMagnfGlass.png">
+      <PackagePath>Assets\SideBarImages\SearchMagnfGlass.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\SideBarImages\Settings.png">
+      <PackagePath>Assets\SideBarImages\Settings.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\SideBarImages\Toggle.png">
+      <PackagePath>Assets\SideBarImages\Toggle.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\SideBarImages\UserIcon.png">
+      <PackagePath>Assets\SideBarImages\UserIcon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\SideBarImages\ViewItems.png">
+      <PackagePath>Assets\SideBarImages\ViewItems.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\LockScreenLogo.scale-200.png">
+      <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\SplashScreen.scale-200.png">
+      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\Square150x150Logo.scale-200.png">
+      <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\Square44x44Logo.scale-200.png">
+      <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\StoreLogo.png">
+      <PackagePath>Assets\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\Wide310x150Logo.scale-200.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\ProductImages\Processor\amdathloncpu.jpg">
+      <PackagePath>Assets\ProductImages\Processor\amdathloncpu.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\ProductImages\Processor\amdsemproncpu.jpg">
+      <PackagePath>Assets\ProductImages\Processor\amdsemproncpu.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\ProductImages\Processor\inteli5cpu.jpg">
+      <PackagePath>Assets\ProductImages\Processor\inteli5cpu.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\ProductImages\Processor\inteli7cpu.jpg">
+      <PackagePath>Assets\ProductImages\Processor\inteli7cpu.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Assets\ProductImages\Processor\intelpentiumcpu.jpg">
+      <PackagePath>Assets\ProductImages\Processor\intelpentiumcpu.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\Properties\Default.rd.xml">
+>>>>>>> origin/master
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Almir\.nuget\packages\EntityFramework.Commands\7.0.0-beta6\lib\net45\EntityFramework.Commands.xml">
@@ -477,16 +564,27 @@
     <AppxPackagedFile Include="C:\Users\Almir\.nuget\packages\EntityFramework.Commands\7.0.0-beta6\lib\net45\EntityFramework.Commands.dll">
       <PackagePath>EntityFramework.Commands.dll</PackagePath>
     </AppxPackagedFile>
+<<<<<<< HEAD
     <AppxPackagedFile Include="C:\Users\Almir\Desktop\Lorem-Ipsum\MashComputerShop\MashComputerShop\bin\x86\Debug\MashComputerShop.xr.xml">
+=======
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\bin\x86\Debug\MashComputerShop.xr.xml">
+>>>>>>> origin/master
       <PackagePath>MashComputerShop.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
+<<<<<<< HEAD
     <AppxPackagedFile Include="C:\Users\Almir\Desktop\Lorem-Ipsum\MashComputerShop\MashComputerShop\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Almir\Desktop\Lorem-Ipsum\MashComputerShop\MashComputerShop\bin\x86\Debug\Core\MashComputerShop.exe">
+=======
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\bin\x86\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject 2.5\MashComputerShop\MashComputerShop\bin\x86\Debug\Core\MashComputerShop.exe">
+>>>>>>> origin/master
       <PackagePath>MashComputerShop.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
