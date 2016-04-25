@@ -6,10 +6,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MashComputerShop.MashDB.Models
 {
-    [Table("CreditCards")]
     class CreditCard
     {
-        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]        [Key]
         public string CardNumber { get; set; }
 
         public DateTime ExpDate { get; set; }

@@ -6,9 +6,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MashComputerShop.MashDB.Models
 {
-    [Table("Receipts")]
     class Receipt
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ReceiptID { get; set; }
 
