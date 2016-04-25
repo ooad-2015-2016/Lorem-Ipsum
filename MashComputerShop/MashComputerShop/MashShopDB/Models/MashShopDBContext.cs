@@ -15,6 +15,8 @@ namespace MashComputerShop.MashShopDB.Models
         public DbSet<RegisteredUser> AllRegisteredUsers { get; set; }
         public DbSet<Administrator> AllAdministrators { get; set; }
         public DbSet<Product> AllProducts { get; set; }
+        public DbSet<CreditCard> CreditCards { get; set; }
+        public DbSet<Receipt> CreditCards { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -34,6 +36,5 @@ namespace MashComputerShop.MashShopDB.Models
             modelBuilder.Entity<RegisteredUser>().Property(p => p.ProfileImage).HasColumnType("image");
             modelBuilder.Entity<Administrator>().Property(p => p.ProfileImage).HasColumnType("image");
         }
-
     }
 }
