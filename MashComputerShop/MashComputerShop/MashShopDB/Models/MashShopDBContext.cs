@@ -15,8 +15,8 @@ namespace MashComputerShop.MashShopDB.Models
         public DbSet<RegisteredUser> AllRegisteredUsers { get; set; }
         public DbSet<Administrator> AllAdministrators { get; set; }
         public DbSet<Product> AllProducts { get; set; }
-        public DbSet<CreditCard> CreditCards { get; set; }
-        public DbSet<Receipt> CreditCards { get; set; }
+        public DbSet<CreditCard> AllCreditCards { get; set; }
+        public DbSet<Receipt> AllReceipts { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
