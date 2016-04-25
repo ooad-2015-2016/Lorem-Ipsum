@@ -26,5 +26,10 @@ namespace MashComputerShop
         {
             this.InitializeComponent();
         }
+
+        private void SignUpForm_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

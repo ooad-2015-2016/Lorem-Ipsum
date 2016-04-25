@@ -24,18 +24,11 @@ namespace MashComputerShop.CustomUserControls
             this.InitializeComponent();
         }
 
-        // Property za boju pozadine dugmeta
-        public SolidColorBrush ButtonColor
-        {
-            get { return (SolidColorBrush)tileButton.Background; }
-            set { tileButton.Background = bttOutline.Background = value; }
-        }
-
         // Property za postavljanje ikone na dugme
         public ImageSource IconSource
         {
-            get { return (ImageSource)tileIcon.Source; }
-            set { tileIcon.Source = value; }
+            get { return TileIcon.Source; }
+            set { TileIcon.Source = value; }
         }
 
         // Property za text labele 
@@ -44,5 +37,6 @@ namespace MashComputerShop.CustomUserControls
             get { return tileLabel.Text; }
             set { tileLabel.Text = value; }
         }
+
     }
 }

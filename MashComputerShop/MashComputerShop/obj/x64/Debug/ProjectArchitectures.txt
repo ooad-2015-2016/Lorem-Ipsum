@@ -1,1 +1,1 @@
-C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject\MashComputerShop\MashComputerShop\MashComputerShop.csproj;x64
+C:\Users\Almir\Desktop\ETF\Lorem-Ipsum\MashComputerShop\MashComputerShop\MashComputerShop.csproj;x64

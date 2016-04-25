@@ -13,8 +13,10 @@ namespace MashComputerShop.MashShopDB.Models
     {
         // Setovi koji sadrzi sve registrovane korisnike, sve proizvode
         public DbSet<RegisteredUser> AllRegisteredUsers { get; set; }
+        public DbSet<Administrator> AllAdministrators { get; set; }
         public DbSet<Product> AllProducts { get; set; }
-
+        //public DbSet<CreditCard> AllCreditCards { get; set; }
+        //public DbSet<Receipt> AllReceipts { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

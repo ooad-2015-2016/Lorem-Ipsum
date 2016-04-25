@@ -7,9 +7,16 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="#5aa2ea">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF1973C9" Offset="1"/>
+                <GradientStop Color="#5aa2ea"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        
         <Grid.RowDefinitions>
-            <RowDefinition Height="1"/>
+            <RowDefinition Height="0"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
@@ -25,17 +32,17 @@
         <Border Grid.ColumnSpan="3" BorderBrush="#d9dadd" BorderThickness="1" Background="#fbfbfc"/>
         
         <!-- Dummy Headline -->
-        <StackPanel Grid.Row="1" Grid.ColumnSpan="3" Margin="0, 20, 0, 30" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent">
-            <TextBlock FontFamily="Roboto Light" FontSize="48" Foreground="#ffffff" HorizontalAlignment="Center" Text="Kreiranje korisničkog računa"/>
-            <TextBlock FontFamily="Roboto Light" FontSize="36" Foreground="#ffffff" HorizontalAlignment="Center" Text="Sretni smo jer ste odlučili koristiti naše usluge!"/>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Center" Background="Transparent">
+            <TextBlock FontFamily="Roboto Light" FontSize="40" Foreground="#fbfbfc" HorizontalAlignment="Center" Text="Kreiranje korisničkog računa"/>
+            <TextBlock FontFamily="Roboto Thin" FontSize="30" FontWeight="Light" Foreground="#fbfbfc" HorizontalAlignment="Center" Text="Sretni smo jer ste odlučili koristiti naše usluge!"/>
         </StackPanel>
         
         <!-- Forma za registraciju korisnika -->
-        <CustomUserControls:SignUpForm Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <CustomUserControls:SignUpForm Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Loaded="SignUpForm_Loaded"/>
         
         <!-- Another dummy text -->
-        <TextBlock Grid.Row="3" Grid.ColumnSpan="3" Margin="100, 20, 100, 0" FontFamily="Roboto Thin" FontSize="18" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" TextWrapping="Wrap">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <TextBlock Grid.Row="3" Grid.ColumnSpan="3" Width="800" FontFamily="Roboto Thin" FontWeight="Light" FontSize="18" Foreground="#fbfbfc" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad  milit et veniam, exercitation ullamco laboris nisi elit consequat. Perspiciatis unde natusem error sit voluptatem laudantium.
         </TextBlock> 
        
     </Grid>

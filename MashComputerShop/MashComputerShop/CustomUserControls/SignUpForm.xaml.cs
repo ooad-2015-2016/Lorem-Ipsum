@@ -33,7 +33,17 @@ namespace MashComputerShop.CustomUserControls
 
         private void TextBoxBackground_GotFocus(object sender, RoutedEventArgs e)
         {
-            NameTB.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(1, 2, 3, 4));
+            NameTB.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(0, 74, 159, 239));
+        }
+
+        private void doneBtt_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void NameTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
 
 

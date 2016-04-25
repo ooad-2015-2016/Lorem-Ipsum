@@ -17,9 +17,6 @@ using Windows.UI.Xaml.Navigation;
 
 namespace MashComputerShop
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
         public MainPage()
@@ -40,12 +37,11 @@ namespace MashComputerShop
         {
             TopbarTitle.Text = title;
         }
-
-
+        
         // Metoda za navigaciju i izmjenu konteksta glavne stranice 
         private void changeMainPageContext()
         {
-            if (viewSelector.IsSelected) { mainContentFrame.Navigate(typeof(HomePage)); changeTopbarTitle(viewSelectorLabel.Text);  }
+            if (viewSelector.IsSelected) { mainContentFrame.Navigate(typeof(HomePage)); changeTopbarTitle(viewSelectorLabel.Text); }
             else if (creatConfigSelector.IsSelected) { mainContentFrame.Navigate(typeof(CreateConfiguration)); changeTopbarTitle(creatConfigSelectorLabel.Text); }
             else if (userProfileSelector.IsSelected) { mainContentFrame.Navigate(typeof(UserProfilePage)); changeTopbarTitle(userProfileSelectorLabel.Text); }
             else if(searchSelector.IsSelected) { mainContentFrame.Navigate(typeof(HomePage)); changeTopbarTitle(searchSelectorLabel.Text); }

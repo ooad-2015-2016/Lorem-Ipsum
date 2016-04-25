@@ -107,15 +107,22 @@
     <Compile Include="CustomUserControls\SignUpForm.xaml.cs">
       <DependentUpon>SignUpForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomUserControls\UserProfileTab.xaml.cs">
+      <DependentUpon>UserProfileTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MashShopDB\Models\Administrator.cs" />
+    <Compile Include="MashShopDB\Models\CreditCard.cs" />
+    <Compile Include="MashShopDB\Models\DefaultModelValues.cs" />
     <Compile Include="MashShopDB\Models\Guest.cs" />
     <Compile Include="MashShopDB\Models\MashShopDBContext.cs" />
     <Compile Include="MashShopDB\Models\Product.cs" />
+    <Compile Include="MashShopDB\Models\Receipt.cs" />
     <Compile Include="MashShopDB\Models\RegisteredUser.cs" />
     <Compile Include="MashShopDB\Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -131,6 +138,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Icons\music.png" />
+    <Content Include="Assets\Icons\TileButtonIcons\balanceicon.png" />
+    <Content Include="Assets\Icons\TileButtonIcons\extracontenticon.png" />
+    <Content Include="Assets\Icons\TileButtonIcons\gpuicon.png" />
+    <Content Include="Assets\Icons\TileButtonIcons\harddiscicon.png" />
+    <Content Include="Assets\Icons\TileButtonIcons\motherboardicon.png" />
+    <Content Include="Assets\Icons\TileButtonIcons\performanceicon.png" />
+    <Content Include="Assets\Icons\TileButtonIcons\processoricon.png" />
+    <Content Include="Assets\Icons\TileButtonIcons\ramicon.png" />
+    <Content Include="Assets\Icons\TileButtonIcons\soundcardicon.png" />
+    <Content Include="Assets\Icons\TileButtonIcons\ssdicon.png" />
+    <Content Include="Assets\Icons\TileButtonIcons\walleticon.png" />
     <Content Include="Assets\ProductImages\Processor\amdaseriescpu.png" />
     <Content Include="Assets\ProductImages\Processor\amdathloncpu.jpg" />
     <Content Include="Assets\ProductImages\Processor\amdsemproncpu.jpg" />
@@ -167,6 +185,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CustomUserControls\SignUpForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomUserControls\UserProfileTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
