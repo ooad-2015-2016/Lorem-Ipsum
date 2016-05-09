@@ -1,0 +1,12 @@
+App.xbf
+MainPage.xbf
+MashShop\Views\Pages\CreateConfiguration.xbf
+MashShop\Views\Pages\HomePage.xbf
+MashShop\Views\Pages\PagesConfiguration.xbf
+MashShop\Views\Pages\ProductDescription.xbf
+MashShop\Views\Pages\UserProfilePages\PersonalInfo.xbf
+MashShop\Views\Pages\UserProfilePages\UserProfile.xbf
+MashShop\Views\Pages\UserRegistration.xbf
+MashShop\Views\UserControlTemplates\ProductViewTemplate.xbf
+MashShop\Views\UserControlTemplates\SignUpForm.xbf
+MashShop\Views\UserControlTemplates\UserProfileTab.xbf
