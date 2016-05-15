@@ -1,0 +1,4 @@
+Strategy pattern je iskoristen kod klasa Rotator, RotatorFast, RotatorSlow.
+State pattern je iskoristen kod klasa PlayerController, PlayerControllerNormal, PlayerControllerFinish.
+Prototype pattern je koristen kod klase Wall koja je prototip za konkretne vrste zidova. Slicno vazi i za klasu Ground
+Observer pattern je koristen kod klasa Player, IObserver, Pickup gdje IObserver sluzi za obavjestavanje promjena Playera klasi Pickup.
