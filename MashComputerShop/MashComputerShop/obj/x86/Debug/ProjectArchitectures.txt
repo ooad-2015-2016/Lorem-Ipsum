@@ -1,1 +1,1 @@
-C:\Users\Almir\Desktop\MashComputerShop\MashComputerShop\MashComputerShop.csproj;x86
+C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\GitProject\MashComputerShop\MashComputerShop\MashComputerShop.csproj;x86

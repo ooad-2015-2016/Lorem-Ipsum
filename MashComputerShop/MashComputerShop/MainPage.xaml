@@ -9,6 +9,33 @@
 
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        
+        <!-- Adaptive Layout Triggers -->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="mainPageVisualStateGroup">
+
+                <!-- Page Layout for mobile screen -->
+                <VisualState x:Name="MobileState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                        
+                    <VisualState.Setters>
+                        <Setter Target="topRow.Height" Value="30"/>
+                        <Setter Target="LogoMash.FontSize" Value="14"/>
+                        <Setter Target="TopbarTitle.FontSize" Value="14"/>
+                    </VisualState.Setters>
+                </VisualState>
+
+                <!-- Page Layout for desktop screen sizes -->
+                <VisualState x:Name="DesktopState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1000"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                              
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
 
         <!--SideBar Navigation Version 1.5 -->
         <SplitView Name="SideBar" DisplayMode="CompactOverlay" OpenPaneLength="200" CompactPaneLength="45" PaneBackground="#03152d" Grid.Column="0">
@@ -77,15 +104,35 @@
 
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="45"/>
+                        <RowDefinition x:Name="topRow" Height="45"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
                     <!-- TopMenu Bar -->
                     <Grid Background="#5aa2ea" Grid.ColumnSpan="6" Grid.Row="0">
-                        <TextBlock Name="LogoMash" Foreground="#fbfbfc" FontFamily="Roboto Light" FontSize="17" VerticalAlignment="Center" Margin="30,0,0,0">MASH PC Shop</TextBlock>
-                        <TextBlock Name="TopbarTitle" Foreground="#fbfbfc" FontFamily="Roboto Light" FontSize="17" VerticalAlignment="Center" HorizontalAlignment="Center">Svi Proizvodi</TextBlock>
-                        <local:UserProfileTab x:Name="UserTab" userProfileBtnClicked="UserTab_userProfileBtnClicked"  HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,25,0"/>
+                        <TextBlock Name="LogoMash" 
+                                   Foreground="#fbfbfc" 
+                                   FontFamily="Roboto Light" 
+                                   FontSize="17"
+                                   VerticalAlignment="Center" 
+                                   Margin="30,0,0,0"
+                                   Text="MASH PC Shop" />
+                        
+                        <TextBlock Name="TopbarTitle" 
+                                   Foreground="#fbfbfc" 
+                                   FontFamily="Roboto Light"
+                                   FontSize="17" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"
+                                   Text="Svi Proizvodi" />
+                        
+                        <local:UserProfileTab 
+                            x:Name="UserTab" 
+                            userProfileBtnClicked="UserTab_userProfileBtnClicked"  
+                            HorizontalAlignment="Right" 
+                            VerticalAlignment="Center" 
+                            Margin="0,0,25,0"/>
+                        
                     </Grid>
                     
                     <!-- Frame that wrapps pages that change depending on the chosen context -->

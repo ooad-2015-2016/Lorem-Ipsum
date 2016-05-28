@@ -10,28 +10,62 @@
     mc:Ignorable="d">
 
     <Grid x:Name="pageGrid" Background="#f2f3f6">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="45"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="45"/>
-        </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="4*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+        <!-- Adaptive Layout Triggers -->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="homePageVisualStateGroup">
+
+                <!-- Page Layout for mobile screen -->
+                <VisualState x:Name="MobileState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+
+                    <VisualState.Setters>
+                        <!-- Header & Footer -->
+                        <Setter Target="topRow.Height" Value="38"/>
+                        <Setter Target="bottomRow.Height" Value="38"/>
+                        
+                        <!-- Header Columns -->
+                        <Setter Target="firstCol.Width" Value="5" />
+                        <Setter Target="pivotCol.Width" Value="0" />
+                        <Setter Target="lastCol.Width" Value="5" />
+                        <Setter Target="productQueryBox.PlaceholderText" Value="Pretraga komponenti" />
+                        <Setter Target="viewFilters.Visibility" Value="Collapsed" />
+                        
+                        <!-- Footer Columns -->
+                        <Setter Target="productCount.Visibility" Value="Collapsed" />
+                        <Setter Target="firstPriceTag.Text" Value="Cijena: " />
+                    </VisualState.Setters>
+                </VisualState>
+
+                <!-- Page Layout for desktop screen sizes -->
+                <VisualState x:Name="DesktopState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1000"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="topRow" Height="45"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition x:Name="bottomRow" Height="45"/>
+        </Grid.RowDefinitions>
+        
 
         <!--Search and Filter Bar -->
-        <Border Grid.ColumnSpan="3" BorderBrush="#d9dadd" BorderThickness="1" Background="#fbfbfc" Padding="0,0,0,1">
+        <Border BorderBrush="#d9dadd" BorderThickness="1" Background="#fbfbfc" Padding="0,0,0,1">
             <Grid Background="#fbfbfc">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition x:Name="firstCol" Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition x:Name="pivotCol" Width="*"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition x:Name="lastCol" Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <AutoSuggestBox x:Name="productQueryBox"
@@ -41,15 +75,18 @@
 					Grid.ColumnSpan="2"
 					HorizontalAlignment="Stretch"
 					VerticalAlignment="Center" 
+                    VerticalContentAlignment="Center"
 					Foreground="#aeb0b8"     
 					FontFamily="Roboto Thin"
 					PlaceholderText="Unesite naziv komponente za pretragu" 
 					QueryIcon="Find"
-					TextChanged="productQueryBox_TextChanged" Style="{StaticResource AutoSuggestBoxStyle1}"/>
+                    QuerySubmitted="productQueryBox_QuerySubmitted"
+					TextChanged="productQueryBox_TextChanged" 
+                    Style="{StaticResource AutoSuggestBoxStyle1}"/>
 
                 <ComboBox x:Name="viewFilters" Grid.Column="3" BorderBrush="#d9dadd" VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="#aeb0b8">
-                    <ComboBoxItem Tag="L" IsSelected="True" Content="Prikaz Liste"/>
-                    <ComboBoxItem Tag="H" Content="Prikaz Slike"/>
+                    <ComboBoxItem Tag="H" Content="Prikaz Slike" IsSelected="True"/>
+                    <ComboBoxItem Tag="L" Content="Prikaz Liste"/>
                 </ComboBox>
 
                 <ComboBox x:Name="sortFilters" Grid.Column="4" BorderBrush="#d9dadd" VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="#aeb0b8">
@@ -60,74 +97,71 @@
             </Grid>
         </Border>
 
-        <!-- Scrollable view for list of components -->
-        <ScrollViewer Grid.Row="1" 
-			Grid.Column="0"
-			Grid.ColumnSpan="3"
-			Background="Transparent" 
-			Margin="0, 5, 0 , 0"
-			HorizontalScrollBarVisibility="Disabled"
-			VerticalScrollBarVisibility="Auto">
-
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition x:Name="gridRowHeightTemplate" Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition x:Name="gridColumnWidthTemplate" Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <GridView Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="4" ItemsSource="{x:Bind Products}" ItemClick="GridView_ItemClick">
-                    <GridView.ItemTemplate>
-                        <DataTemplate x:DataType="data:Product">
-                            <UserControlTemplates:ProductViewTemplate
-                                Height="300" 
-                                Width="216.2"/>
-                        </DataTemplate>
-                    </GridView.ItemTemplate>
-                </GridView>
-                
-            </Grid>
-        </ScrollViewer>
-
-        <!-- Footer Beta
-        <Border Grid.Row="2" Grid.ColumnSpan="3" BorderBrush="#d9dadd" BorderThickness="1" Background="#fbfbfc" Padding="0,1,0,0"/>
-        -->
+        
+        <!-- Frame for holding list of products -->
+        <Frame Name="productsView" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+       
 
         <!-- Footer -->
-        <Border x:Name="FooterDrawer" Grid.Row="2" Grid.ColumnSpan="3" BorderBrush="#d9dadd" BorderThickness="1" Background="#fbfbfc" Padding="0,1,0,0">
+        <Border x:Name="FooterDrawer" 
+                Grid.Row="2" 
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch" 
+                BorderBrush="#d9dadd" 
+                BorderThickness="1" 
+                Background="#fbfbfc" 
+                Padding="0,1,0,0">
+            
             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <!-- TextBlock za prikaz stanja u korpi -->
-                <TextBlock x:Name="ShoppingCartState" 
-					FontFamily="Roboto" 
-					HorizontalAlignment="Center"  
-					VerticalAlignment="Center" 
-					FontWeight="Light" 
-					Text="Shopping Cart State"/>
+                <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    
+                    <TextBlock Name="productCount"
+                        RelativePanel.AlignLeftWithPanel="True"
+                        RelativePanel.AlignVerticalCenterWithPanel="True"
+                        RelativePanel.LeftOf="showSoppingCart"
+                        Margin="20, 0, 0, 0"
+					    FontFamily="Roboto"
+					    FontWeight="Light"
+                        Foreground="#59626d">
+                        
+                        <Run>Ukupno </Run>
+                        <Run Text="{Binding Path=ShoppingCart.Items.Count, Mode=TwoWay}"/>
+                        <Run> proizvoda u korpi.</Run>
+
+                    </TextBlock>
+
+                    <HyperlinkButton 
+                        Name="showSoppingCart"                    
+                        RelativePanel.AlignRightWithPanel="True"
+                        RelativePanel.AlignVerticalCenterWithPanel="True"
+					    FontFamily="Roboto"
+					    FontWeight="Normal" 
+					    Content="Pregledaj korpu"
+                        Click="showShoppingCart_Click"/>
+
+                </RelativePanel>
 
                 <!-- TextBlock za prikaz ukupne cijene -->
-                <TextBlock x:Name="TotalShoppingCardPrice" 
+                <TextBlock x:Name="totalPrice" 
 					Grid.Column="2" 
 					HorizontalAlignment="Center"  
 					VerticalAlignment="Center" 
 					FontFamily="Roboto" 
-					FontWeight="Light" 
-					Text="Shopping Cart State"/>
+					FontWeight="Light"
+                    Foreground="#59626d">
+                    
+                    <Run x:Name="firstPriceTag" >Ukupna cijena: </Run>
+                    <Run Text="{Binding Path=ShoppingCart.TotalCartPrice, Mode=TwoWay}"/>
+                    <Run>$</Run>
+
+                </TextBlock>
 
             </Grid>
         </Border>

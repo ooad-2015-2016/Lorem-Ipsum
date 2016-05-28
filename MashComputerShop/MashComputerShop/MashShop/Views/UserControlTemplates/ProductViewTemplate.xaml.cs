@@ -21,12 +21,17 @@ namespace MashComputerShop.MashShop.Views.UserControlTemplates
 {
     public sealed partial class ProductViewTemplate : UserControl
     {
-        public Product Product { get { return this.DataContext as Product; } }
+        public ShoppingCartItem ShoppingCartItem { get { return this.DataContext as ShoppingCartItem; } }
 
         public ProductViewTemplate()
         {
             this.InitializeComponent();
             this.DataContextChanged += (s, e) => Bindings.Update();
+        }
+
+        public Product getProduct
+        {
+            get { return ShoppingCartItem.Product; }
         }
     }
 }

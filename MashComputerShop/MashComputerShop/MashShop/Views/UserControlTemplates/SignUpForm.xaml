@@ -10,17 +10,25 @@
     d:DesignWidth="400">
 
     <StackPanel Name="backboardPanel">
-        <TextBox Name="NameTB" PlaceholderText="Ime" Style="{StaticResource TransparentRoundedTextBox}"/>
+        <TextBox Name="NameTB" PlaceholderText="Ime" Style="{StaticResource TransparentRoundedTextBox}" Text="{Binding UserNew.FirstName, Mode=TwoWay}"/>
 
-        <TextBox Name="SurnameTB" PlaceholderText="Prezime" Style="{StaticResource TransparentRoundedTextBox}"/>
+        <TextBox Name="SurnameTB" PlaceholderText="Prezime" Style="{StaticResource TransparentRoundedTextBox}" Text="{Binding UserNew.LastName, Mode=TwoWay}"/>
 
-        <TextBox Name="EmailTB" PlaceholderText="Email" Style="{StaticResource TransparentRoundedTextBox}"/>
+        <TextBox Name="EmailTB" PlaceholderText="Email" Style="{StaticResource TransparentRoundedTextBox}" Text="{Binding UserNew.Email, Mode=TwoWay}"/>
 
-        <TextBox Name="PasswordTB" PlaceholderText="Password" Style="{StaticResource TransparentRoundedTextBox}"/>
+        <TextBox Name="PasswordTB" PlaceholderText="Password" Style="{StaticResource TransparentRoundedTextBox}" Text="{Binding UserNew.Password, Mode=TwoWay}"/>
 
         <TextBox Name="ConfirmPwTB" PlaceholderText="Potvrdite Password" Style="{StaticResource TransparentRoundedTextBox}"/>
 
-        <Button Name="doneBtt" Content="Registrirajte se" Click="doneBtt_Click" Height="30" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource RoundedButton}"/>
+        <Button 
+            Name="doneBtt" 
+            Content="Registrirajte se" 
+            Height="30" 
+            HorizontalAlignment="Stretch" 
+            VerticalAlignment="Stretch" 
+            Style="{StaticResource RoundedButton}"
+            Click="doneBtt_Click"/>
+        
     </StackPanel>
     
 </UserControl>

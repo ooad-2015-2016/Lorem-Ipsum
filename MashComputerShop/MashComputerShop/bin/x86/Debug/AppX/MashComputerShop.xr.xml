@@ -4,6 +4,33 @@
     <RootPropertyPathName Name="TemplateSettings" />
     <RootPropertyPathName Name="DropDownOffset" />
     <RootPropertyPathName Name="DropDownOpenedHeight" />
+    <RootPropertyPathName Name="ShoppingCartVM" />
+    <RootPropertyPathName Name="ShoppingCart" />
+    <RootPropertyPathName Name="TotalCartPrice" />
+    <RootPropertyPathName Name="Items" />
+    <RootPropertyPathName Name="Count" />
+    <RootPropertyPathName Name="PriceRange" />
+    <RootPropertyPathName Name="ShoppingCartItem" />
+    <RootPropertyPathName Name="Product" />
+    <RootPropertyPathName Name="Price" />
+    <RootPropertyPathName Name="Description" />
+    <RootPropertyPathName Name="Grade" />
+    <RootPropertyPathName Name="Name" />
+    <RootPropertyPathName Name="ImagePath" />
+    <RootPropertyPathName Name="FilteredProducts" />
+    <RootPropertyPathName Name="Uslikaj" />
+    <RootPropertyPathName Name="Camera" />
+    <RootPropertyPathName Name="MediaCapture" />
+    <RootPropertyPathName Name="Slika" />
+    <RootPropertyPathName Name="TelephoneNumber" />
+    <RootPropertyPathName Name="Address" />
+    <RootPropertyPathName Name="Password" />
+    <RootPropertyPathName Name="Username" />
+    <RootPropertyPathName Name="LastName" />
+    <RootPropertyPathName Name="FirstName" />
+    <RootPropertyPathName Name="Email" />
+    <RootPropertyPathName Name="UserNew" />
+    <RootPropertyPathName Name="HeaderTag" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -23,10 +50,10 @@
       <RootProperty Name="Background" />
       <RootProperty Name="Content" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="FontFamily" />
-      <RootProperty Name="FontWeight" />
-      <RootProperty Name="Height" />
       <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Command" />
+      <RootProperty Name="FontFamily" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="Flyout" />
       <RootEvent Name="Click" />
@@ -61,8 +88,15 @@
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Style" />
       <RootProperty Name="Width" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="FontFamily" />
+      <RootProperty Name="FontWeight" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Foreground" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Name" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Text" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="HorizontalScrollMode" />
@@ -70,18 +104,20 @@
       <RootProperty Name="IsTabStop" />
       <RootProperty Name="IsHorizontalRailEnabled" />
       <RootProperty Name="IsVerticalRailEnabled" />
-      <RootProperty Name="IsDeferredScrollingEnabled" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Padding" />
       <RootProperty Name="VerticalScrollBarVisibility" />
       <RootProperty Name="VerticalScrollMode" />
       <RootProperty Name="ZoomMode" />
+      <RootProperty Name="IsDeferredScrollingEnabled" />
       <RootProperty Name="BringIntoViewOnFocusChange" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="MinWidth" />
       <RootProperty Name="VerticalSnapPointsType" />
       <RootProperty Name="VerticalSnapPointsAlignment" />
       <RootProperty Name="Content" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Background" />
       <RootMethod Name="GetHorizontalScrollBarVisibility" />
       <RootMethod Name="SetHorizontalScrollBarVisibility" />
@@ -104,26 +140,39 @@
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="VerticalContentAlignment" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="FontFamily" />
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="QueryIcon" />
       <RootProperty Name="Style" />
+      <RootEvent Name="QuerySubmitted" />
       <RootEvent Name="TextChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
+      <RootProperty Name="Style" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Items" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Foreground" />
-      <RootProperty Name="Items" />
+      <RootEvent Name="SelectionChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ItemsControl">
       <RootProperty Name="ItemsPanel" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
+      <RootProperty Name="SelectionHighlightColor" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="PlaceholderText" />
+      <RootProperty Name="Style" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Setter">
       <RootProperty Name="Property" />
       <RootProperty Name="Value" />
+      <RootProperty Name="Target" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ControlTemplate">
       <RootProperty Name="TargetType" />
@@ -140,6 +189,7 @@
       <RootProperty Name="Name" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Margin" />
       <RootMethod Name="GetColumnSpan" />
       <RootMethod Name="SetColumnSpan" />
       <RootMethod Name="GetRow" />
@@ -159,6 +209,8 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.VisualState">
       <RootProperty Name="Storyboard" />
+      <RootProperty Name="StateTriggers" />
+      <RootProperty Name="Setters" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.Animation.Storyboard">
       <RootProperty Name="Children" />
@@ -192,8 +244,9 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Inlines" />
       <RootProperty Name="TextWrapping" />
-      <RootProperty Name="Width" />
       <RootProperty Name="TextAlignment" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="Width" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Automation.AutomationProperties">
       <RootMethod Name="GetAccessibilityView" />
@@ -216,8 +269,8 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Child" />
       <RootProperty Name="RenderTransform" />
-      <RootProperty Name="Padding" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Padding" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
     </RootType>
@@ -228,16 +281,16 @@
       <RootProperty Name="FontWeight" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Visibility" />
-      <RootProperty Name="FlowDirection" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="ContentTransitions" />
-      <RootProperty Name="TextWrapping" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="BorderThickness" />
+      <RootProperty Name="ContentTransitions" />
       <RootProperty Name="HorizontalContentAlignment" />
       <RootProperty Name="Padding" />
       <RootProperty Name="VerticalContentAlignment" />
+      <RootProperty Name="FlowDirection" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="TextWrapping" />
       <RootProperty Name="CornerRadius" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ContentControl">
@@ -249,6 +302,8 @@
       <RootProperty Name="Padding" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
+    <RootType FullName="Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation" />
+    <RootType FullName="Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.SplitCloseThemeAnimation">
       <RootProperty Name="ClosedTargetName" />
       <RootProperty Name="OffsetFromCenter" />
@@ -257,6 +312,8 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="RelativeSource" />
+      <RootProperty Name="Path" />
+      <RootProperty Name="Mode" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.RelativeSource">
       <RootProperty Name="Mode" />
@@ -304,10 +361,12 @@
       <RootProperty Name="ItemContainerTransitions" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
-    <RootType FullName="Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation" />
-    <RootType FullName="Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation" />
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="Content" />
+      <RootProperty Name="Resources" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.AdaptiveTrigger">
+      <RootProperty Name="MinWindowWidth" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.SplitView">
       <RootProperty Name="Name" />
@@ -334,6 +393,8 @@
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Orientation" />
       <RootProperty Name="Children" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Visibility" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Background" />
@@ -345,10 +406,14 @@
       <RootProperty Name="Height" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="Name" />
+      <RootProperty Name="Stretch" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Frame">
       <RootProperty Name="Name" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="MashComputerShop.MashShop.Views.UserControlTemplates.UserProfileTab">
       <RootProperty Name="HorizontalAlignment" />
@@ -357,35 +422,81 @@
       <RootEvent Name="userProfileBtnClicked" />
     </RootType>
     <RootType FullName="MashComputerShop.MainPage" />
-    <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
-      <RootProperty Name="Fill" />
+    <RootType FullName="Windows.UI.Xaml.Controls.GridView">
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
-    </RootType>
-    <RootType FullName="MashComputerShop.MashShop.Views.Pages.CreateConfiguration" />
-    <RootType FullName="Windows.UI.Xaml.Controls.GridView">
       <RootProperty Name="ItemsSource" />
+      <RootProperty Name="IsItemClickEnabled" />
+      <RootProperty Name="FlowDirection" />
       <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="SelectedValue" />
       <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
     </RootType>
+    <RootType FullName="MashComputerShop.MashShop.Views.UserControlTemplates.OptionSelectControl">
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+    </RootType>
+    <RootType FullName="MashComputerShop.MashShop.Views.Pages.ComponentSelection" />
+    <RootType FullName="Windows.UI.Xaml.Controls.RelativePanel">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Children" />
+      <RootMethod Name="GetAlignLeftWithPanel" />
+      <RootMethod Name="SetAlignLeftWithPanel" />
+      <RootMethod Name="GetAlignVerticalCenterWithPanel" />
+      <RootMethod Name="SetAlignVerticalCenterWithPanel" />
+      <RootMethod Name="GetLeftOf" />
+      <RootMethod Name="SetLeftOf" />
+      <RootMethod Name="GetAlignRightWithPanel" />
+      <RootMethod Name="SetAlignRightWithPanel" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Documents.Run">
+      <RootProperty Name="Text" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.HyperlinkButton">
+      <RootProperty Name="Name" />
+      <RootProperty Name="FontFamily" />
+      <RootProperty Name="FontWeight" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootEvent Name="Click" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
+      <RootProperty Name="Name" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Fill" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+    </RootType>
+    <RootType FullName="MashComputerShop.MashShop.Views.Pages.CreateConfiguration" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ComboBoxItem">
+      <RootProperty Name="IsSelected" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="Tag" />
+    </RootType>
+    <RootType FullName="MashComputerShop.MashShop.Views.Pages.DeliveryAndPayment" />
+    <RootType FullName="MashComputerShop.MashShop.Views.Pages.HomePage" />
+    <RootType FullName="MashComputerShop.MashShop.Views.Pages.PriceRangeSelection" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ProgressBar">
+      <RootProperty Name="Maximum" />
+      <RootProperty Name="Value" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Background" />
+    </RootType>
+    <RootType FullName="MashComputerShop.MashShop.Views.Pages.ProductDescription" />
     <RootType FullName="MashComputerShop.MashShop.Views.UserControlTemplates.ProductViewTemplate">
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ComboBoxItem">
-      <RootProperty Name="Tag" />
-      <RootProperty Name="IsSelected" />
-      <RootProperty Name="Content" />
-    </RootType>
-    <RootType FullName="MashComputerShop.MashShop.Views.Pages.HomePage" />
-    <RootType FullName="MashComputerShop.MashShop.Views.Pages.PagesConfiguration" />
-    <RootType FullName="MashComputerShop.MashShop.Views.Pages.ProductDescription" />
-    <RootType FullName="MashComputerShop.MashShop.Views.Pages.UserProfile.PersonalInfo" />
-    <RootType FullName="MashComputerShop.MashShop.Views.Pages.UserProfilePages.UserProfile" />
+    <RootType FullName="MashComputerShop.MashShop.Views.Pages.ProductsTileView" />
     <RootType FullName="Windows.UI.Xaml.Media.LinearGradientBrush">
       <RootProperty Name="EndPoint" />
       <RootProperty Name="StartPoint" />
@@ -395,18 +506,30 @@
       <RootProperty Name="Color" />
       <RootProperty Name="Offset" />
     </RootType>
-    <RootType FullName="MashComputerShop.MashShop.Views.UserControlTemplates.SignUpForm">
+    <RootType FullName="MashComputerShop.MashShop.Views.Pages.ShoppingCartView" />
+    <RootType FullName="Windows.UI.Xaml.Controls.RadioButton">
+      <RootProperty Name="GroupName" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="IsChecked" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.CaptureElement">
+      <RootProperty Name="Name" />
+      <RootProperty Name="Source" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootEvent Name="Loaded" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Documents.Run">
-      <RootProperty Name="Text" />
-    </RootType>
+    <RootType FullName="MashComputerShop.MashShop.Views.Pages.UserProfilePages.ProfileInfo" />
+    <RootType FullName="MashComputerShop.MashShop.Views.Pages.UserLogin" />
+    <RootType FullName="MashComputerShop.MashShop.Views.Pages.UserProfile.PersonalInfo" />
+    <RootType FullName="MashComputerShop.MashShop.Views.Pages.UserProfilePages.UserProfile" />
     <RootType FullName="MashComputerShop.MashShop.Views.Pages.UserRegistration" />
     <RootType FullName="Windows.UI.Xaml.Controls.UserControl">
       <RootProperty Name="Content" />
     </RootType>
+    <RootType FullName="MashComputerShop.MashShop.Views.UserControlTemplates.ProductDescriptionView" />
+    <RootType FullName="MashComputerShop.MashShop.Views.UserControlTemplates.ShopCart" />
+    <RootType FullName="MashComputerShop.MashShop.Views.UserControlTemplates.SignUpForm" />
     <RootType FullName="Windows.UI.Xaml.Controls.MenuFlyout">
       <RootProperty Name="Placement" />
       <RootProperty Name="Items" />
@@ -420,6 +543,7 @@
       <RootProperty Name="FontWeight" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Margin" />
+      <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.MenuFlyoutSeparator">
       <RootProperty Name="Background" />

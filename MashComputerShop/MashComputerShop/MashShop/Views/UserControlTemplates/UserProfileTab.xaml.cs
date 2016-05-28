@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MashComputerShop.MashShop.Models.User;
+using MashComputerShop.MashShop.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -19,9 +21,14 @@ namespace MashComputerShop.MashShop.Views.UserControlTemplates
 {
     public sealed partial class UserProfileTab : UserControl
     {
+        public ShoppingCartVM ShoppingCartVM { get; set; }
+        public IUser CurrentUser { get; set; }
+
         public UserProfileTab()
         {
             this.InitializeComponent();
+            ShoppingCartVM = new ShoppingCartVM();
+            DataContext = ShoppingCartVM.UserVM.IUser;
         }
 
         // Event socket za klik na dugme "User Profile"
@@ -31,5 +38,18 @@ namespace MashComputerShop.MashShop.Views.UserControlTemplates
             remove { userProfile.Click -= value; }
         }
 
+
+        // otvara user profile
+        private void userProfile_Click(object sender, RoutedEventArgs e)
+        {
+            if (ShoppingCartVM.UserVM.OpenUserProfile.CanExecute(null))
+                ShoppingCartVM.UserVM.OpenUserProfile.Execute(null);
+        }
+        
+        // odjava s racuna
+        private void logoutFly_Click(object sender, RoutedEventArgs e)
+        {
+            ShoppingCartVM.UserVM.LogOut.Execute(null);
+        }
     }
 }

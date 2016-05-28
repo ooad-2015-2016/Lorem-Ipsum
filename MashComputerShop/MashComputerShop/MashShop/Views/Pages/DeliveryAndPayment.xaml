@@ -1,0 +1,121 @@
+﻿<Page
+    x:Class="MashComputerShop.MashShop.Views.Pages.DeliveryAndPayment"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MashComputerShop.MashShop.Views.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#f2f3f6">
+
+        <!-- Adaptive Layout Triggers -->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="deliveryPaymentVisualStateGroup">
+
+                <!-- Page Layout for mobile screen -->
+                <VisualState x:Name="MobileState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+
+                    <VisualState.Setters>
+                        <!-- Grid positions -->
+                        <Setter Target="addressSelector.(Grid.Column)" Value="0" />
+                        <Setter Target="addressSelector.(Grid.Row)" Value="1" />
+                        <Setter Target="payPalTab.(Grid.Row)" Value="2" />
+                        <Setter Target="internalRightCol.Width" Value="0" />
+
+                        <!-- Control margins -->
+                        <Setter Target="addressSelector.Margin" Value="0,0,0,5" />
+                        <Setter Target="paymentSelector.Margin" Value="0,0,0,5" />
+                        <Setter Target="payPalTab.Margin" Value="0,0,0,5" />
+                        
+                        <!-- Side skirts thicknes -->
+                        <Setter Target="topRow.Height" Value="2" />
+                        <Setter Target="bottomRow.Height" Value="15" />
+                        <Setter Target="firstCol.Width" Value="15" />
+                        <Setter Target="lastCol.Width" Value="2" />
+                        
+                        <!-- Title font sizes -->
+                        <Setter Target="paymentTitle.FontSize" Value="14" />
+                        <Setter Target="payPalTitle.FontSize" Value="14" />
+                        <Setter Target="addressTitle.FontSize" Value="14" />
+                        
+                        <!-- Subtitle font sizes -->
+                        <Setter Target="paymentSubtitle.FontSize" Value="11" />
+                        <Setter Target="payPalSubtitle.FontSize" Value="11" />
+                        <Setter Target="addressSubtitle.FontSize" Value="11" />
+                    </VisualState.Setters>
+                </VisualState>
+
+                <!-- Page Layout for desktop screen sizes -->
+                <VisualState x:Name="DesktopState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1000"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="topRow" Height="*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition x:Name="bottomRow" Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="firstCol" Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition x:Name="lastCol" Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalScrollMode="Disabled" VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition x:Name="internalRightCol" Width="*"/>
+                </Grid.ColumnDefinitions>
+               
+                <StackPanel x:Name="paymentSelector" Grid.Row="0" Margin="0, 0, 10, 20">
+                    <TextBlock x:Name="paymentTitle" Text="Način Plaćanja" FontFamily="Roboto" FontSize="20" FontWeight="Normal" Foreground="#59626d" Margin="0,0,0,20"/>
+                    <TextBlock x:Name="paymentSubtitle" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius tempor incididunt ut labore et dolore magna aliqua." FontFamily="Roboto" FontSize="14" FontWeight="Light" Foreground="#767c83" TextWrapping="Wrap" Margin="0,0,0,20"/>
+                    <ComboBox x:Name="paymentMethod"  Style="{StaticResource ComboBoxLight}" HorizontalAlignment="Stretch" Margin="0,0,20,20" SelectionChanged="paymentMethod_SelectionChanged">
+                        <ComboBoxItem IsSelected="True">PayPal</ComboBoxItem>
+                        <ComboBoxItem>Bank Account</ComboBoxItem>
+                        <ComboBoxItem>Other</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel x:Name="payPalTab" Grid.Row="1" Margin="0, 0, 10, 20" Visibility="Collapsed">
+                    <TextBlock x:Name="payPalTitle" Text="Informacije za PayPal korisnički račun" FontFamily="Roboto" FontSize="20" FontWeight="Normal" Foreground="#59626d" Margin="0,0,0,20"/>
+                    <TextBlock x:Name="payPalSubtitle" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius tempor incididunt ut labore et dolore magna aliqua." FontFamily="Roboto" FontSize="14" FontWeight="Light" Foreground="#767c83" TextWrapping="Wrap" Margin="0,0,0,20"/>
+                    <TextBox Style="{StaticResource RoundedTextBoxLight}" PlaceholderText="Username / Email" Margin="0,0,20,20"/>
+                    <TextBox Style="{StaticResource RoundedTextBoxLight}" PlaceholderText="Password" Margin="0,0,20,20"/>
+                    <TextBox Style="{StaticResource RoundedTextBoxLight}" PlaceholderText="Kod kreditne kartice" Margin="0,0,20,20" x:Name="creditCard" Visibility="Collapsed"/>
+                </StackPanel>
+
+                <StackPanel x:Name="addressSelector" Grid.Row="0" Grid.Column="1" Margin="0, 0, 10, 20">
+                    <TextBlock x:Name="addressTitle" Text="Adresa za Dostavu" FontFamily="Roboto" FontSize="20" FontWeight="Normal" Foreground="#59626d" Margin="0,0,0,20"/>
+                    <TextBlock x:Name="addressSubtitle" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius tempor incididunt ut labore et dolore magna aliqua." FontFamily="Roboto" FontSize="14" FontWeight="Light" Foreground="#767c83" TextWrapping="Wrap" Margin="0,0,0,20"/>
+                    <ComboBox Style="{StaticResource ComboBoxLight}" HorizontalAlignment="Stretch" Margin="0,0,20,20">
+                        <ComboBoxItem IsSelected="True">Adresa 6</ComboBoxItem>
+                        <ComboBoxItem>Adresa 5</ComboBoxItem>
+                        <ComboBoxItem>Adresa 12</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+
+            </Grid>
+
+        </ScrollViewer>
+
+    </Grid>
+</Page>

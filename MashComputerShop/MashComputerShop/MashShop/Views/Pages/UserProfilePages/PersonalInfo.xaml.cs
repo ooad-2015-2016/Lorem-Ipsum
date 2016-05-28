@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MashComputerShop.MashShop.Models.User;
+using MashComputerShop.MashShop.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +24,28 @@ namespace MashComputerShop.MashShop.Views.Pages.UserProfile
     /// </summary>
     public sealed partial class PersonalInfo : Page
     {
+        public UserVM UserVM { get; set; }
+        public RegisteredUser RegisteredUser { get; set; }
+
         public PersonalInfo()
         {
             this.InitializeComponent();
+            RegisteredUser = new RegisteredUser();
+            DataContext = RegisteredUser;
         }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            UserVM = e.Parameter as UserVM;
+            RegisteredUser = UserVM.IUser as RegisteredUser;
+            DataContext = RegisteredUser;
+        }
+
+        private void saveChangesButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (UserVM.SaveProfileDataChanges.CanExecute(RegisteredUser))
+                UserVM.SaveProfileDataChanges.Execute(RegisteredUser);
+        }
+
     }
 }

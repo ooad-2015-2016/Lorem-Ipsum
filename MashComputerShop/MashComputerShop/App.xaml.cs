@@ -7,6 +7,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -48,8 +49,9 @@ namespace MashComputerShop
                 this.DebugSettings.EnableFrameRateCounter = false;
             }
 #endif
-            Frame rootFrame = Window.Current.Content as Frame;
 
+            Frame rootFrame = Window.Current.Content as Frame;
+            
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
             if (rootFrame == null)
@@ -58,7 +60,7 @@ namespace MashComputerShop
                 rootFrame = new Frame();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
-
+               
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Load state from previously suspended application
@@ -66,6 +68,8 @@ namespace MashComputerShop
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
+
+
             }
 
             if (e.PrelaunchActivated == false)
@@ -75,6 +79,7 @@ namespace MashComputerShop
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
+                    var tmp = new MainPage();
                     rootFrame.Navigate(typeof(MainPage), e.Arguments);
                 }
                 // Ensure the current window is active
@@ -91,6 +96,7 @@ namespace MashComputerShop
         {
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
+
 
         /// <summary>
         /// Invoked when application execution is being suspended.  Application state is saved

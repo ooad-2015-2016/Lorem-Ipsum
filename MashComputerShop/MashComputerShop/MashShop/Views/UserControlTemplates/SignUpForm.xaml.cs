@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MashComputerShop.MashShop.Models.User;
+using MashComputerShop.MashShop.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -19,14 +21,20 @@ namespace MashComputerShop.MashShop.Views.UserControlTemplates
 {
     public sealed partial class SignUpForm : UserControl
     {
+        public UserVM UserVM { get; set; }
+        public RegisteredUser UserNew { get; set; }
+
         public SignUpForm()
         {
             this.InitializeComponent();
+            UserNew = new RegisteredUser();
+            DataContext = UserNew;
         }
 
         private void doneBtt_Click(object sender, RoutedEventArgs e)
         {
-
+            if (UserVM.GenerateAccount.CanExecute(new Tuple<IUser, string>(UserNew, ConfirmPwTB.Text)));
+                UserVM.GenerateAccount.Execute(UserNew);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using MashComputerShop.MashShop.Views.Pages.UserProfile;
+﻿using MashComputerShop.MashShop.ViewModels;
+using MashComputerShop.MashShop.Views.Pages.UserProfile;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -23,17 +24,25 @@ namespace MashComputerShop.MashShop.Views.Pages.UserProfilePages
     /// </summary>
     public sealed partial class UserProfile : Page
     {
+        public UserVM UserVM { get; set; }
+
         public UserProfile()
         {
             this.InitializeComponent();
             licniPodaciSelector.IsSelected = true;
-            contentFrame.Navigate(typeof(PersonalInfo));
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            UserVM = e.Parameter as UserVM;
+            DataContext = UserVM;
+            contentFrame.Navigate(typeof(PersonalInfo), UserVM);
         }
 
         private void navigationBar_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (licniPodaciSelector.IsSelected) { contentFrame.Navigate(typeof(PersonalInfo)); }
-            //else if (profilSelector.IsSelected) { contentFrame.Navigate(typeof(CreateConfiguration)); }
+            if (licniPodaciSelector.IsSelected) { contentFrame.Navigate(typeof(PersonalInfo), UserVM); }
+            else if (profilSelector.IsSelected) { contentFrame.Navigate(typeof(ProfileInfo), UserVM); }
             //else if (emailSelector.IsSelected) { contentFrame.Navigate(typeof(UserProfilePage)); }
         }
     }

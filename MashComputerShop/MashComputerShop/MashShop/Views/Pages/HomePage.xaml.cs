@@ -1,4 +1,6 @@
 ﻿using MashComputerShop.MashShop.Models;
+using MashComputerShop.MashShop.ViewModels;
+using MashComputerShop.MashShop.Views.UserControlTemplates;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,6 +9,8 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -24,25 +28,25 @@ namespace MashComputerShop.MashShop.Views.Pages
     /// </summary>
     public sealed partial class HomePage : Page
     {
-        // Noobish way of implementing data binding
-        private List<Product> Products;
+        public ShoppingCartVM ShoppingCartVM { get; set; }
 
         public HomePage()
         {
             this.InitializeComponent();
-            ShopWindowCollection = new ObservableCollection<Product>();
-
-            // noobs
-            Products = ProductCatalog.getAllProductsAndComponents();
+            isShoppingCartOpen = false;
         }
 
-        // Kolekcija proizvoda koja predstavlja "izlog prodavnice", dakle sadrži sve proizvode koje trenutno posjedujemo
-        public ObservableCollection<Product> ShopWindowCollection { get; set; }
+        // pri otvaranju stranice prvo se prikazuje frame sa listom svih proizvoda
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            ShoppingCartVM = e.Parameter as ShoppingCartVM;
+            DataContext = ShoppingCartVM;
+            productsView.Navigate(typeof(ProductsTileView), new Tuple<ShoppingCartVM, string>(ShoppingCartVM, ""));
+        }
 
-        
+
         // Privremena kolekcija proizvoda koristena za svrhe pretrage
         private string[] products = new string[] { "Intel i7", "Intel i5", "AMD Sempron", "AMD Athlon", "Intel Xeon Phi", "AMD A8 SuperCore", "Snapdragon 860A", "Intel Pentium vPro" };
-
 
         // Event u kojem vrsimo pretrazivanje proizvoda u svrhu AutoSuggesta za search
         private void productQueryBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
@@ -53,9 +57,34 @@ namespace MashComputerShop.MashShop.Views.Pages
             productQueryBox.ItemsSource = filteredResults;
         }
 
-        private void GridView_ItemClick(object sender, ItemClickEventArgs e)
+        // Obrada zahtjeva za pretragu u autosuggest box-u
+        private void productQueryBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
         {
-            
+            productsView.Navigate(typeof(ProductsTileView), args.QueryText);
         }
-    }
+
+
+        /**
+         * Prikazivanje sadržaja ShoppingCart-a te zatvaranje istog frame-a
+        **/
+        bool isShoppingCartOpen;
+             
+        private void showShoppingCart_Click(object sender, RoutedEventArgs e)
+        {
+            // Proslijediti parametar takav da se prikažu oni proizvodi koje korisnik ima u korpi?
+            if(isShoppingCartOpen)
+            {
+                if (productsView.CanGoBack) productsView.GoBack();
+                showSoppingCart.Content = "Pregledaj korpu";
+            }
+            else
+            {
+                productsView.Navigate(typeof(ShoppingCartView), ShoppingCartVM);
+                showSoppingCart.Content = "Zatvori korpu";
+            }
+
+            isShoppingCartOpen = !isShoppingCartOpen;
+        } // end of "showShoppingCart_Click" eventHandler
+
+    } 
 }

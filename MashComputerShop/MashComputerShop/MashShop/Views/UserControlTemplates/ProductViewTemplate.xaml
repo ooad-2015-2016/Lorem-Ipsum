@@ -9,8 +9,15 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <Border BorderBrush="#d9dadd" BorderThickness="1" Padding="0,0,0,1" Margin="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-        <Grid Background="#fbfbfc">
+    <Border x:Name="outline" 
+            BorderBrush="#d9dadd" 
+            BorderThickness="1" 
+            Padding="0,0,0,1" 
+            Margin="1" 
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Stretch">
+
+        <Grid Background="#fbfbfc" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="5*"/>
@@ -25,11 +32,23 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Image Name="productImage" Source="{x:Bind Product.Description}" Grid.Row="1" Grid.Column="1"/>
+            <Image Name="productImage" Source="{x:Bind ShoppingCartItem.Product.ImagePath}" Grid.Row="1" Grid.Column="1"/>
 
-            <TextBlock Name="productName" Text="{x:Bind Product.Name}" FontFamily="Roboto Regular" Foreground="#767c83" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1"/>
+            <TextBlock Name="productName" 
+                       Text="{x:Bind ShoppingCartItem.Product.Name}" 
+                       FontFamily="Roboto Regular" 
+                       Foreground="#767c83" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"
+                       Grid.Row="2" Grid.Column="1"/>
 
-            <TextBlock Name="productPrice" Text="{x:Bind Product.Price}" FontFamily="Roboto Regular" Foreground="#5aa2ea" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1"/>
+            <TextBlock Name="productPrice"
+                       Text="{x:Bind ShoppingCartItem.Product.Price}" 
+                       FontFamily="Roboto Regular"
+                       Foreground="#5aa2ea"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" 
+                       Grid.Row="3" Grid.Column="1"/>
 
         </Grid>
     </Border>

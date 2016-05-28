@@ -101,23 +101,54 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MashShop\Models\Administrator.cs" />
-    <Compile Include="MashShop\Models\Guest.cs" />
+    <Compile Include="MashShop\Helper\CameraHelper.cs" />
+    <Compile Include="MashShop\Helper\INavigationService.cs" />
+    <Compile Include="MashShop\Helper\NavigationService.cs" />
+    <Compile Include="MashShop\Helper\RelayCommand.cs" />
+    <Compile Include="MashShop\Models\User\Administrator.cs" />
+    <Compile Include="MashShop\Models\ConfigurationOption.cs" />
+    <Compile Include="MashShop\Models\User\Guest.cs" />
+    <Compile Include="MashShop\Models\User\IUser.cs" />
+    <Compile Include="MashShop\Models\MashShopProductCatalogue.cs" />
     <Compile Include="MashShop\Models\Product.cs" />
     <Compile Include="MashShop\Models\Receipt.cs" />
-    <Compile Include="MashShop\Models\RegisteredUser.cs" />
-    <Compile Include="MashShop\Models\User.cs" />
+    <Compile Include="MashShop\Models\User\RegisteredUser.cs" />
+    <Compile Include="MashShop\Models\ShoppingCart.cs" />
+    <Compile Include="MashShop\Models\ShoppingCartItem.cs" />
+    <Compile Include="MashShop\ViewModels\CameraVM.cs" />
+    <Compile Include="MashShop\ViewModels\CreatorVM.cs" />
+    <Compile Include="MashShop\ViewModels\ProductDescriptionVM.cs" />
+    <Compile Include="MashShop\ViewModels\ShoppingCartVM.cs" />
+    <Compile Include="MashShop\ViewModels\UserVM.cs" />
+    <Compile Include="MashShop\Views\Pages\ComponentSelection.xaml.cs">
+      <DependentUpon>ComponentSelection.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MashShop\Views\Pages\CreateConfiguration.xaml.cs">
       <DependentUpon>CreateConfiguration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MashShop\Views\Pages\DeliveryAndPayment.xaml.cs">
+      <DependentUpon>DeliveryAndPayment.xaml</DependentUpon>
     </Compile>
     <Compile Include="MashShop\Views\Pages\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MashShop\Views\Pages\PagesConfiguration.xaml.cs">
-      <DependentUpon>PagesConfiguration.xaml</DependentUpon>
+    <Compile Include="MashShop\Views\Pages\PriceRangeSelection.xaml.cs">
+      <DependentUpon>PriceRangeSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="MashShop\Views\Pages\ProductDescription.xaml.cs">
       <DependentUpon>ProductDescription.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MashShop\Views\Pages\ProductsTileView.xaml.cs">
+      <DependentUpon>ProductsTileView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MashShop\Views\Pages\ShoppingCartView.xaml.cs">
+      <DependentUpon>ShoppingCartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MashShop\Views\Pages\UserProfilePages\ProfileInfo.xaml.cs">
+      <DependentUpon>ProfileInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MashShop\Views\Pages\UserProfilePages\UserLogin.xaml.cs">
+      <DependentUpon>UserLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="MashShop\Views\Pages\UserProfilePages\PersonalInfo.xaml.cs">
       <DependentUpon>PersonalInfo.xaml</DependentUpon>
@@ -125,11 +156,20 @@
     <Compile Include="MashShop\Views\Pages\UserProfilePages\UserProfile.xaml.cs">
       <DependentUpon>UserProfile.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MashShop\Views\Pages\UserRegistration.xaml.cs">
+    <Compile Include="MashShop\Views\Pages\UserProfilePages\UserRegistration.xaml.cs">
       <DependentUpon>UserRegistration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MashShop\Views\UserControlTemplates\OptionSelectControl.xaml.cs">
+      <DependentUpon>OptionSelectControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MashShop\Views\UserControlTemplates\ProductDescriptionView.xaml.cs">
+      <DependentUpon>ProductDescriptionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MashShop\Views\UserControlTemplates\ProductViewTemplate.xaml.cs">
       <DependentUpon>ProductViewTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MashShop\Views\UserControlTemplates\ShopCart.xaml.cs">
+      <DependentUpon>ShopCart.xaml</DependentUpon>
     </Compile>
     <Compile Include="MashShop\Views\UserControlTemplates\SignUpForm.xaml.cs">
       <DependentUpon>SignUpForm.xaml</DependentUpon>
@@ -146,7 +186,18 @@
     <None Include="MashComputerShop_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Icons\balanceicon.png" />
+    <Content Include="Assets\Icons\extraicon.png" />
+    <Content Include="Assets\Icons\gpuicon.png" />
+    <Content Include="Assets\Icons\hddicon.png" />
+    <Content Include="Assets\Icons\motherboardicon.png" />
     <Content Include="Assets\Icons\music.png" />
+    <Content Include="Assets\Icons\performanceicon.png" />
+    <Content Include="Assets\Icons\processoricon.png" />
+    <Content Include="Assets\Icons\ramicon.png" />
+    <Content Include="Assets\Icons\soundcardicon.png" />
+    <Content Include="Assets\Icons\ssdicon.png" />
+    <Content Include="Assets\Icons\walleticon.png" />
     <Content Include="Assets\ShopProducts\Processors\amdaseriescpu.png" />
     <Content Include="Assets\ShopProducts\Processors\amdathloncpu.jpg" />
     <Content Include="Assets\ShopProducts\Processors\amdsemproncpu.jpg" />
@@ -178,7 +229,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="MashShop\Views\Pages\ComponentSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MashShop\Views\Pages\CreateConfiguration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MashShop\Views\Pages\DeliveryAndPayment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -186,11 +245,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MashShop\Views\Pages\PagesConfiguration.xaml">
+    <Page Include="MashShop\Views\Pages\PriceRangeSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MashShop\Views\Pages\ProductDescription.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MashShop\Views\Pages\ProductsTileView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MashShop\Views\Pages\ShoppingCartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MashShop\Views\Pages\UserProfilePages\ProfileInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MashShop\Views\Pages\UserProfilePages\UserLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,11 +277,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MashShop\Views\Pages\UserRegistration.xaml">
+    <Page Include="MashShop\Views\Pages\UserProfilePages\UserRegistration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MashShop\Views\UserControlTemplates\OptionSelectControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MashShop\Views\UserControlTemplates\ProductDescriptionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MashShop\Views\UserControlTemplates\ProductViewTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MashShop\Views\UserControlTemplates\ShopCart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -219,9 +306,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MashShop\ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

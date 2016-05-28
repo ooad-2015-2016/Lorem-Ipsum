@@ -7,42 +7,236 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="#f2f3f6">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="2*"/>
-        </Grid.RowDefinitions>
+    <ScrollViewer VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
+            HorizontalScrollMode="Disabled" VerticalScrollBarVisibility="Auto">
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="3*"/>
-        </Grid.ColumnDefinitions>
+        <!-- Adaptive Layout Triggers -->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="optionSelectVisualStateGroup">
 
-        <StackPanel Grid.ColumnSpan="2">
-            <TextBlock Text="Lični Podaci" Margin="30,0,0,0" FontFamily="Roboto" FontWeight="Normal" FontSize="30" Foreground="#767c83"/>
-            <TextBlock TextWrapping="Wrap" Margin="30,0,0,0" FontFamily="Roboto" FontWeight="Light" FontSize="15" Foreground="#767c83">
+                <!-- Page Layout for mobile screen -->
+                <VisualState x:Name="MobileState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+
+                    <VisualState.Setters>
+                        <!-- Changing the rows -->
+                        <Setter Target="firstNameBox.(Grid.Row)" Value="2" />
+                        <Setter Target="lastNameBox.(Grid.Row)" Value="4" />
+                        <Setter Target="usernameBox.(Grid.Row)" Value="6" />
+                        <Setter Target="passwordBox.(Grid.Row)" Value="8" />
+                        <Setter Target="addressBox.(Grid.Row)" Value="10" />
+                        <Setter Target="telephoneBox.(Grid.Row)" Value="12" />
+
+                        <!-- Changing the Columns -->
+                        <Setter Target="firstNameBox.(Grid.Column)" Value="0" />
+                        <Setter Target="lastNameBox.(Grid.Column)" Value="0" />
+                        <Setter Target="usernameBox.(Grid.Column)" Value="0" />
+                        <Setter Target="passwordBox.(Grid.Column)" Value="0" />
+                        <Setter Target="addressBox.(Grid.Column)" Value="0" />
+                        <Setter Target="telephoneBox.(Grid.Column)" Value="0" />
+                        <Setter Target="labelCol.Width" Value="Auto" />
+
+                        <!-- Changing the ColumnSpan -->
+                        <Setter Target="firstNameBox.(Grid.ColumnSpan)" Value="2" />
+                        <Setter Target="lastNameBox.(Grid.ColumnSpan)" Value="2" />
+                        <Setter Target="usernameBox.(Grid.ColumnSpan)" Value="2" />
+                        <Setter Target="passwordBox.(Grid.ColumnSpan)" Value="2" />
+                        <Setter Target="addressBox.(Grid.ColumnSpan)" Value="2" />
+                        <Setter Target="telephoneBox.(Grid.ColumnSpan)" Value="2" />
+
+                        <!-- Setting side margins -->
+                        <Setter Target="firstNameBox.Margin" Value="0,5,15,10" />
+                        <Setter Target="lastNameBox.Margin" Value="0,5,15,10" />
+                        <Setter Target="usernameBox.Margin" Value="0,5,15,10" />
+                        <Setter Target="passwordBox.Margin" Value="0,5,15,10" />
+                        <Setter Target="addressBox.Margin" Value="0,5,15,10" />
+                        <Setter Target="telephoneBox.Margin" Value="0,5,15,10" />
+                        <Setter Target="firstNameBlock.Margin" Value="5,0,0,0" />
+                        <Setter Target="lastNameBlock.Margin" Value="5,0,0,0" />
+                        <Setter Target="usernameBlock.Margin" Value="5,0,0,0" />
+                        <Setter Target="passwordBlock.Margin" Value="5,0,0,0" />
+                        <Setter Target="addressBlock.Margin" Value="5,0,0,0" />
+                        <Setter Target="telephoneBlock.Margin" Value="5,0,0,0" />
+                        <Setter Target="saveChangesButton.Margin" Value="10, 15, 15, 10" />
+
+                        <!-- Setting the fonts -->
+                        <Setter Target="personalDataTitle.FontSize" Value="22" />
+                        <Setter Target="personalDataSubtitle.FontSize" Value="12" />
+                        <Setter Target="personalDataTitle.Margin" Value="5,0,0,0" />
+                        <Setter Target="personalDataSubtitle.Margin" Value="5,5,15,10" />
+                    </VisualState.Setters>
+                </VisualState>
+
+                <!-- Page Layout for desktop screen sizes -->
+                <VisualState x:Name="DesktopState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1000"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid x:Name="internalGrid" Background="#f2f3f6">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="labelCol" Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.ColumnSpan="2">
+                <TextBlock x:Name="personalDataTitle" Text="Lični Podaci" Margin="30,0,0,0" FontFamily="Roboto" FontWeight="Normal" FontSize="30" Foreground="#767c83"/>
+                <TextBlock x:Name="personalDataSubtitle" TextWrapping="Wrap" Margin="30,0,0,0" FontFamily="Roboto" FontWeight="Light" FontSize="15" Foreground="#767c83">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </TextBlock>
-        </StackPanel>
+                </TextBlock>
+            </StackPanel>
 
-        <TextBlock Text="Ime" Margin="30,0,0,0" FontFamily="Roboto" FontWeight="Light" FontSize="15" Foreground="#767c83" Grid.Row="1" VerticalAlignment="Center"/>
-        <TextBlock Text="Prezime" Margin="30,0,0,0" FontFamily="Roboto" FontWeight="Light" FontSize="15" Foreground="#767c83" Grid.Row="2" VerticalAlignment="Center"/>
-        <TextBlock Text="Država" Margin="30,0,0,0" FontFamily="Roboto" FontWeight="Light" FontSize="15" Foreground="#767c83" Grid.Row="3" VerticalAlignment="Center"/>
-        <TextBlock Text="Grad" Margin="30,0,0,0" FontFamily="Roboto" FontWeight="Light" FontSize="15" Foreground="#767c83" Grid.Row="4" VerticalAlignment="Center"/>
-        <TextBlock Text="Adresa" Margin="30,0,0,0" FontFamily="Roboto" FontWeight="Light" FontSize="15" Foreground="#767c83" Grid.Row="5" VerticalAlignment="Center"/>
-        <TextBlock Text="Broj Telefona" Margin="30,0,0,0" FontFamily="Roboto" FontWeight="Light" FontSize="15" Foreground="#767c83" Grid.Row="6" VerticalAlignment="Center"/>
+            <TextBlock x:Name="firstNameBlock"
+                   Text="Ime" 
+                   Margin="30,0,0,0" 
+                   FontFamily="Roboto" 
+                   FontWeight="Light" 
+                   FontSize="15" 
+                   Foreground="#767c83" 
+                   Grid.Row="1" 
+                   VerticalAlignment="Center"/>
 
-        <TextBox Style="{StaticResource RoundedTextBoxLight}" Grid.Row="1" Grid.Column="1" Margin="0" VerticalAlignment="Center"/>
-        <TextBox Style="{StaticResource RoundedTextBoxLight}" Grid.Row="2" Grid.Column="1" Margin="0" VerticalAlignment="Center"/>
-        <TextBox Style="{StaticResource RoundedTextBoxLight}" Grid.Row="3" Grid.Column="1" Margin="0" VerticalAlignment="Center"/>
-        <TextBox Style="{StaticResource RoundedTextBoxLight}" Grid.Row="4" Grid.Column="1" Margin="0" VerticalAlignment="Center"/>
-        <TextBox Style="{StaticResource RoundedTextBoxLight}" Grid.Row="5" Grid.Column="1" Margin="0" VerticalAlignment="Center"/>
-        <TextBox Style="{StaticResource RoundedTextBoxLight}" Grid.Row="6" Grid.Column="1" Margin="0" VerticalAlignment="Center"/>
-    </Grid>
+            <TextBlock x:Name="lastNameBlock"
+                   Text="Prezime" 
+                   Margin="30,0,0,0" 
+                   FontFamily="Roboto" 
+                   FontWeight="Light" 
+                   FontSize="15" 
+                   Foreground="#767c83"
+                   Grid.Row="3" 
+                   VerticalAlignment="Center"/>
+
+            <TextBlock x:Name="usernameBlock"
+                   Text="Korisničko ime" 
+                   Margin="30,0,0,0" 
+                   FontFamily="Roboto" 
+                   FontWeight="Light" 
+                   FontSize="15" 
+                   Foreground="#767c83" 
+                   Grid.Row="5" 
+                   VerticalAlignment="Center"/>
+
+            <TextBlock x:Name="passwordBlock"
+                   Text="Lozinka" 
+                   Margin="30,0,0,0" 
+                   FontFamily="Roboto"
+                   FontWeight="Light" 
+                   FontSize="15" 
+                   Foreground="#767c83" 
+                   Grid.Row="7" 
+                   VerticalAlignment="Center"/>
+
+            <TextBlock x:Name="addressBlock"
+                   Text="Adresa" 
+                   Margin="30,0,0,0"
+                   FontFamily="Roboto"
+                   FontWeight="Light" 
+                   FontSize="15" 
+                   Foreground="#767c83" 
+                   Grid.Row="9" 
+                   VerticalAlignment="Center"/>
+
+            <TextBlock x:Name="telephoneBlock"
+                   Text="Broj Telefona" 
+                   Margin="30,0,0,0"
+                   FontFamily="Roboto" 
+                   FontWeight="Light" 
+                   FontSize="15" 
+                   Foreground="#767c83" 
+                   Grid.Row="11" 
+                   VerticalAlignment="Center"/>
+
+            <TextBox x:Name="firstNameBox" 
+                 Style="{StaticResource RoundedTextBoxLight}" 
+                 Text="{Binding Path=FirstName, Mode=TwoWay}"
+                 Grid.Row="1" 
+                 Grid.Column="1" 
+                 Margin="0" 
+                 VerticalAlignment="Center"/>
+
+            <TextBox x:Name="lastNameBox" 
+                 Style="{StaticResource RoundedTextBoxLight}" 
+                 Text="{Binding Path=LastName, Mode=TwoWay}"
+                 Grid.Row="3" 
+                 Grid.Column="1"
+                 Margin="0" 
+                 VerticalAlignment="Center"/>
+
+            <TextBox x:Name="usernameBox" 
+                 Style="{StaticResource RoundedTextBoxLight}"
+                 Text="{Binding Path=Username, Mode=TwoWay}"
+                 Grid.Row="5"
+                 Grid.Column="1"
+                 Margin="0" 
+                 VerticalAlignment="Center"/>
+
+            <TextBox x:Name="passwordBox" 
+                 Style="{StaticResource RoundedTextBoxLight}" 
+                 Text="{Binding Path=Password, Mode=TwoWay}"
+                 Grid.Row="7"
+                 Grid.Column="1" 
+                 Margin="0" 
+                 VerticalAlignment="Center"/>
+
+            <TextBox x:Name="addressBox" 
+                 Style="{StaticResource RoundedTextBoxLight}"
+                 Text="{Binding Path=Address, Mode=TwoWay}"
+                 Grid.Row="9" 
+                 Grid.Column="1"
+                 Margin="0" 
+                 VerticalAlignment="Center"/>
+
+            <TextBox x:Name="telephoneBox" 
+                 Style="{StaticResource RoundedTextBoxLight}"
+                 Text="{Binding Path=TelephoneNumber, Mode=TwoWay}"
+                 Grid.Row="11"
+                 Grid.Column="1"
+                 Margin="0"
+                 VerticalAlignment="Center"/>
+
+            <!-- Save Changes Button -->
+            <Button x:Name="saveChangesButton"
+                Content="Spasi izmjene"
+                Style="{StaticResource TileButton}" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Center" 
+                Height="40"
+                Width="120" 
+                Grid.Row="13" 
+                Grid.Column="1" 
+                FontFamily="Roboto"
+                FontSize="15" 
+                Foreground="#fbfbfc"
+                Click="saveChangesButton_Click"/>
+
+        </Grid>
+    </ScrollViewer>
+    
 </Page>

@@ -8,17 +8,50 @@
     mc:Ignorable="d">
 
     <Grid Background="#f2f3f6">
+
+        <!-- Adaptive Layout Triggers -->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="optionSelectVisualStateGroup">
+
+                <!-- Page Layout for mobile screen -->
+                <VisualState x:Name="MobileState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+
+                    <VisualState.Setters>
+                        <Setter Target="topRow.Height" Value="0" />
+                        <Setter Target="bottomRow.Height" Value="0" />
+                        <Setter Target="firstCol.Width" Value="0" />
+                        <Setter Target="listCol.Width" Value="2*" />
+                        <Setter Target="contentCol.Width" Value="6*" />
+                        <Setter Target="lastCol.Width" Value="0" />
+                        <Setter Target="navigationBar.Padding" Value="0,10,0,0" />
+                        <Setter Target="contentFrame.Margin" Value="10,0,0,0" />
+                    </VisualState.Setters>
+                </VisualState>
+
+                <!-- Page Layout for desktop screen sizes -->
+                <VisualState x:Name="DesktopState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1000"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition x:Name="topRow" Height="*"/>
             <RowDefinition Height="6*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition x:Name="bottomRow" Height="*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="4*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition x:Name="firstCol" Width="*"/>
+            <ColumnDefinition x:Name="listCol" Width="2*"/>
+            <ColumnDefinition x:Name="contentCol"  Width="4*"/>
+            <ColumnDefinition x:Name="lastCol" Width="*"/>
         </Grid.ColumnDefinitions>
 
         <ListBox Name="navigationBar" Padding="20,20,0,0" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" SelectionMode="Single" SelectionChanged="navigationBar_SelectionChanged">
@@ -29,7 +62,6 @@
 
         <!-- Frame that wrapps pages that change depending on the chosen context -->
         <Frame Name="contentFrame" Grid.Row="1" Grid.Column="2"/>
-
-        <Button Style="{StaticResource TileButton}" HorizontalAlignment="Right" VerticalAlignment="Top" Height="40" Width="120" Grid.Row="2" Grid.Column="2" FontFamily="Roboto" FontSize="15" Foreground="#fbfbfc">Spasi</Button>
+        
     </Grid>
 </Page>

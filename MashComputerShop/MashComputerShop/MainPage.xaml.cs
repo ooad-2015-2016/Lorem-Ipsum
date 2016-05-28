@@ -1,4 +1,5 @@
-﻿using MashComputerShop.MashShop.Views.Pages;
+﻿using MashComputerShop.MashShop.ViewModels;
+using MashComputerShop.MashShop.Views.Pages;
 using MashComputerShop.MashShop.Views.Pages.UserProfilePages;
 using System;
 using System.Collections.Generic;
@@ -20,18 +21,32 @@ using Windows.UI.Xaml.Navigation;
 namespace MashComputerShop
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// Na ovoj stranici držimo sve podatke vezane za ViewModel. ShoppingCartVM se proteže kroz cijelu aplikaciju
+    /// te pruža osnovni kontejner za podatke i logiku sistema.
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public ShoppingCartVM ShoppingCartVM { get; set; }
 
         public MainPage()
         {
             this.InitializeComponent();
+            NavigationCacheMode = NavigationCacheMode.Required;
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            // Inicijalizacija ViewModela
+            ShoppingCartVM = new ShoppingCartVM();
+            ShoppingCartVM.UserVM.NavigationService.SetTargetFrame(mainContentFrame);
+            UserTab.ShoppingCartVM = this.ShoppingCartVM;
+            DataContext = ShoppingCartVM;
+
             // pri prvom otvaranju postavlja se home page kao kontekst
             viewSelector.IsSelected = true;
-            mainContentFrame.Navigate(typeof(HomePage));
+            mainContentFrame.Navigate(typeof(HomePage), ShoppingCartVM);
         }
+
 
         // Events for sideBarNavigation
         private void toggleButton_Click(object sender, RoutedEventArgs e)
@@ -44,33 +59,45 @@ namespace MashComputerShop
             TopbarTitle.Text = title;
         }
 
+
         // Metoda za navigaciju i izmjenu konteksta glavne stranice 
         private void changeMainPageContext()
         {
-            if (viewSelector.IsSelected) { mainContentFrame.Navigate(typeof(HomePage)); changeTopbarTitle(viewSelectorLabel.Text); }
-            else if (creatConfigSelector.IsSelected) { mainContentFrame.Navigate(typeof(CreateConfiguration)); changeTopbarTitle(creatConfigSelectorLabel.Text); }
-            else if (userProfileSelector.IsSelected) { mainContentFrame.Navigate(typeof(UserProfile)); changeTopbarTitle(userProfileSelectorLabel.Text); }
-            //else if (searchSelector.IsSelected) { mainContentFrame.Navigate(typeof(ShopWindowView)); changeTopbarTitle(searchSelectorLabel.Text); }
+            if (viewSelector.IsSelected) {
+                mainContentFrame.Navigate(typeof(HomePage), ShoppingCartVM);
+                changeTopbarTitle(viewSelectorLabel.Text);
+            }
+            else if (creatConfigSelector.IsSelected) {
+                mainContentFrame.Navigate(typeof(CreateConfiguration), ShoppingCartVM);
+                changeTopbarTitle(creatConfigSelectorLabel.Text);
+            }
+            else if (userProfileSelector.IsSelected) {
+                ShoppingCartVM.UserVM.SetTargetPageFrame(mainContentFrame);
+                ShoppingCartVM.UserVM.OpenUserProfile.Execute(null);
+                
+                //mainContentFrame.Navigate(typeof(UserProfile));
+                changeTopbarTitle(userProfileSelectorLabel.Text);
+            }
+            //else if (searchSelector.IsSelected) { 
+            //    mainContentFrame.Navigate(typeof(ShopWindowView));
+            //    changeTopbarTitle(searchSelectorLabel.Text);
+            //}
         }
+
 
         // Event u kojem obrađujemo naredbe za navigaciju po stranicama
         private void navigationListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             changeMainPageContext();
         }
-
-
+        
         private void UserTab_userProfileBtnClicked(object sender, RoutedEventArgs e)
         {
             userProfileSelector.IsSelected = true;
-            mainContentFrame.Navigate(typeof(UserProfile));
+            //mainContentFrame.Navigate(typeof(UserProfile), ShoppingCartVM.UserVM);
+            ShoppingCartVM.UserVM.OpenUserProfile.Execute(null);
             changeTopbarTitle(userProfileSelectorLabel.Text);
         }
 
-        /* private void showCart(object sender, RoutedEventArgs e)
-         {
-             changeTopbarTitle("Korpa");
-             mainContentFrame.Navigate(typeof(ShoppingCart));
-         }*/
     }
 }
