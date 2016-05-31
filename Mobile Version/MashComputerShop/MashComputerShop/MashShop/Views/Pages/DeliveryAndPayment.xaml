@@ -23,8 +23,12 @@
                     <VisualState.Setters>
                         <!-- Grid positions -->
                         <Setter Target="addressSelector.(Grid.Column)" Value="0" />
-                        <Setter Target="addressSelector.(Grid.Row)" Value="1" />
+                        <Setter Target="addressSelector.(Grid.Row)" Value="0" />
+                        <Setter Target="addressSelector.(Grid.RowSpan)" Value="1" />
+                        <Setter Target="paymentSelector.(Grid.Column)" Value="0" />
+                        <Setter Target="paymentSelector.(Grid.Row)" Value="1" />
                         <Setter Target="payPalTab.(Grid.Row)" Value="2" />
+                        <Setter Target="creditCardTab.(Grid.Row)" Value="2" />
                         <Setter Target="internalRightCol.Width" Value="0" />
 
                         <!-- Control margins -->
@@ -42,11 +46,13 @@
                         <Setter Target="paymentTitle.FontSize" Value="14" />
                         <Setter Target="payPalTitle.FontSize" Value="14" />
                         <Setter Target="addressTitle.FontSize" Value="14" />
+                        <Setter Target="creditCardTitle.FontSize" Value="14" />
 
                         <!-- Subtitle font sizes -->
                         <Setter Target="paymentSubtitle.FontSize" Value="11" />
                         <Setter Target="payPalSubtitle.FontSize" Value="11" />
                         <Setter Target="addressSubtitle.FontSize" Value="11" />
+                        <Setter Target="creditCardSubtitle.FontSize" Value="11" />
                         
                     </VisualState.Setters>
                 </VisualState>
@@ -80,33 +86,16 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition x:Name="internalRightCol" Width="*"/>
                 </Grid.ColumnDefinitions>
-               
-                <StackPanel x:Name="paymentSelector" Grid.Row="0" Margin="0, 0, 10, 20">
-                    <TextBlock x:Name="paymentTitle" Text="Način Plaćanja" FontFamily="Roboto" FontSize="20" FontWeight="Normal" Foreground="#59626d" Margin="0,0,0,20"/>
-                    <TextBlock x:Name="paymentSubtitle" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius tempor incididunt ut labore et dolore magna aliqua." FontFamily="Roboto" FontSize="14" FontWeight="Light" Foreground="#767c83" TextWrapping="Wrap" Margin="0,0,0,20"/>
-                    <ComboBox x:Name="paymentMethod"  Style="{StaticResource ComboBoxLight}" HorizontalAlignment="Stretch" Margin="0,0,20,20" SelectionChanged="paymentMethod_SelectionChanged">
-                        <ComboBoxItem IsSelected="True">PayPal</ComboBoxItem>
-                        <ComboBoxItem>Bank Account</ComboBoxItem>
-                        <ComboBoxItem>Other</ComboBoxItem>
-                    </ComboBox>
-                </StackPanel>
 
-                <StackPanel x:Name="payPalTab" Grid.Row="1" Margin="0, 0, 10, 20" Visibility="Collapsed">
-                    <TextBlock x:Name="payPalTitle" Text="Informacije za PayPal korisnički račun" FontFamily="Roboto" FontSize="20" FontWeight="Normal" Foreground="#59626d" Margin="0,0,0,20"/>
-                    <TextBlock x:Name="payPalSubtitle" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius tempor incididunt ut labore et dolore magna aliqua." FontFamily="Roboto" FontSize="14" FontWeight="Light" Foreground="#767c83" TextWrapping="Wrap" Margin="0,0,0,20"/>
-                    <TextBox Style="{StaticResource RoundedTextBoxLight}" PlaceholderText="Username / Email" Margin="0,0,20,20"/>
-                    <TextBox Style="{StaticResource RoundedTextBoxLight}" PlaceholderText="Password" Margin="0,0,20,20"/>
-                    <TextBox Style="{StaticResource RoundedTextBoxLight}" PlaceholderText="Kod kreditne kartice" Margin="0,0,20,20" x:Name="creditCard" Visibility="Collapsed"/>
-                </StackPanel>
-
-
-                <StackPanel x:Name="addressSelector" Grid.Row="0" Grid.Column="1" Margin="0, 0, 10, 20">
+                <!-- Location Selector -->
+                <StackPanel x:Name="addressSelector" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Margin="0, 0, 10, 20">
                     <TextBlock x:Name="addressTitle" Text="Adresa za Dostavu" FontFamily="Roboto" FontSize="20" FontWeight="Normal" Foreground="#59626d" Margin="0,0,0,20"/>
                     <TextBlock 
                         x:Name="addressSubtitle" 
@@ -142,6 +131,60 @@
 
                 </StackPanel>
 
+                <!-- Payment Selector -->
+                <StackPanel x:Name="paymentSelector" Grid.Row="0" Grid.Column="0" Margin="0, 0, 10, 20">
+                    <TextBlock x:Name="paymentTitle" Text="Način Plaćanja" FontFamily="Roboto" FontSize="20" FontWeight="Normal" Foreground="#59626d" Margin="0,0,0,20"/>
+                    <TextBlock x:Name="paymentSubtitle" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius tempor incididunt ut labore et dolore magna aliqua." FontFamily="Roboto" FontSize="14" FontWeight="Light" Foreground="#767c83" TextWrapping="Wrap" Margin="0,0,0,20"/>
+                    <ComboBox x:Name="paymentMethod"  Style="{StaticResource ComboBoxLight}" HorizontalAlignment="Stretch" Margin="0,0,20,20" SelectionChanged="paymentMethod_SelectionChanged">
+                        <ComboBoxItem>PayPal</ComboBoxItem>
+                        <ComboBoxItem>Credit Card</ComboBoxItem>
+                        <ComboBoxItem>Other</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+
+                <!-- PayPal -->
+                <StackPanel x:Name="payPalTab" Grid.Row="1" Grid.Column="0" Margin="0, 0, 10, 20" Visibility="Collapsed">
+                    <TextBlock x:Name="payPalTitle" Text="Informacije za PayPal korisnički račun" FontFamily="Roboto" FontSize="20" FontWeight="Normal" Foreground="#59626d" Margin="0,0,0,20"/>
+                    <TextBlock x:Name="payPalSubtitle" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius tempor incididunt ut labore et dolore magna aliqua." FontFamily="Roboto" FontSize="14" FontWeight="Light" Foreground="#767c83" TextWrapping="Wrap" Margin="0,0,0,20"/>
+                    <TextBox Style="{StaticResource RoundedTextBoxLight}" PlaceholderText="Username / Email" Margin="0,0,20,20"/>
+                    <TextBox Style="{StaticResource RoundedTextBoxLight}" PlaceholderText="Password" Margin="0,0,20,20"/>
+                </StackPanel>
+                
+                <!-- Credit Card -->
+                <StackPanel x:Name="creditCardTab" Grid.Row="1" Grid.Column="0" Margin="0, 0, 10, 20" Visibility="Collapsed">
+                    
+                    <TextBlock x:Name="creditCardTitle" 
+                               Text="Odaberite tip i provucite karticu kroz čitač" 
+                               FontFamily="Roboto" FontSize="20" FontWeight="Normal" 
+                               Foreground="#59626d" Margin="0,0,0,20"/>
+                    
+                    <TextBlock x:Name="creditCardSubtitle" 
+                               Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius tempor incididunt ut labore et dolore magna aliqua." 
+                               FontFamily="Roboto" FontSize="14" FontWeight="Light" Foreground="#767c83" TextWrapping="Wrap" Margin="0,0,0,20"/>
+                    
+                    <ComboBox x:Name="creditCardTypeSelection"  
+                              Style="{StaticResource ComboBoxLight}"
+                              HorizontalAlignment="Stretch" 
+                              Margin="0,0,20,20">
+                        <ComboBoxItem IsSelected="True">MasterCard</ComboBoxItem>
+                        <ComboBoxItem>Visa</ComboBoxItem>
+                        <ComboBoxItem>Diners Club</ComboBoxItem>
+                        <ComboBoxItem>American Express</ComboBoxItem>
+                        <ComboBoxItem>Other</ComboBoxItem>
+                    </ComboBox>
+                    
+                    <TextBox Style="{StaticResource RoundedTextBoxLight}" 
+                             PlaceholderText="Kod vaše kreditne kartice" 
+                             Margin="0,0,20,20" 
+                             x:Name="creditCardCode" />
+
+                    <Button  Name="validateCreditCardButton"
+                        Style="{StaticResource TileButton}" 
+                        HorizontalAlignment="Center" 
+                        Content="Validirajte karticu"
+                        Click="validateCreditCardButton_Click"/>
+
+                </StackPanel>
             </Grid>
 
         </ScrollViewer>

@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\MobileApp\MashComputerShop\MashComputerShop\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-31T18:28:09.698</Modified>
+      <Modified>2016-05-31T21:24:08.412</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\MobileApp\MashComputerShop\MashComputerShop\bin\x86\Debug\MashComputerShop.exe">
       <PackagePath>entrypoint\MashComputerShop.exe</PackagePath>
-      <Modified>2016-05-31T18:28:06.678</Modified>
+      <Modified>2016-05-31T21:24:06.162</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\medina.i\.nuget\packages\EntityFramework.Core\7.0.0-beta6\lib\dotnet\EntityFramework.Core.dll">
       <PackagePath>EntityFramework.Core.dll</PackagePath>
@@ -682,7 +682,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\MobileApp\MashComputerShop\MashComputerShop\bin\x86\Debug\MashComputerShop.xr.xml">
       <PackagePath>MashComputerShop.xr.xml</PackagePath>
-      <Modified>2016-05-31T18:28:05.874</Modified>
+      <Modified>2016-05-31T21:24:05.337</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -690,11 +690,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\MobileApp\MashComputerShop\MashComputerShop\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-05-31T18:28:08.333</Modified>
+      <Modified>2016-05-31T21:24:07.717</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\medina.i\Desktop\ETF\4. semestar materijali\OOAD\MobileApp\MashComputerShop\MashComputerShop\bin\x86\Debug\Core\MashComputerShop.exe">
       <PackagePath>MashComputerShop.exe</PackagePath>
-      <Modified>2016-05-31T18:28:09.678</Modified>
+      <Modified>2016-05-31T21:24:08.396</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

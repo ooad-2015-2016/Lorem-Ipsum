@@ -37,8 +37,7 @@ namespace MashComputerShop.MashShop.ViewModels
         {
             allUsers = new List<RegisteredUser>()
             {
-                new RegisteredUser() { FirstName = "Jimi", LastName = "Hendrix", Username = "Josh", Password = "12345" },
-                new RegisteredUser() { FirstName = "Linus", LastName = "Thorwalds", Username = "Linux", Password = "Rules" }
+                new RegisteredUser() { FirstName = "Windows", LastName = "App", Username = "OOAD", Password = "OOAD" }
             };
 
             IUser = new Guest();

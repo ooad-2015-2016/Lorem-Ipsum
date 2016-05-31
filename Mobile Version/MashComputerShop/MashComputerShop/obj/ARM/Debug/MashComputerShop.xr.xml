@@ -94,7 +94,6 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Name" />
       <RootProperty Name="Text" />
-      <RootProperty Name="Visibility" />
       <RootProperty Name="FontFamily" />
       <RootProperty Name="FontWeight" />
       <RootProperty Name="FontSize" />
@@ -479,15 +478,15 @@
       <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="MashComputerShop.MashShop.Views.Pages.CreateConfiguration" />
-    <RootType FullName="Windows.UI.Xaml.Controls.Maps.MapControl">
-      <RootProperty Name="Center" />
-      <RootProperty Name="MapServiceToken" />
-      <RootProperty Name="Visibility" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBoxItem">
       <RootProperty Name="IsSelected" />
       <RootProperty Name="Content" />
       <RootProperty Name="Tag" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Maps.MapControl">
+      <RootProperty Name="Center" />
+      <RootProperty Name="MapServiceToken" />
+      <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="MashComputerShop.MashShop.Views.Pages.DeliveryAndPayment" />
     <RootType FullName="MashComputerShop.MashShop.Views.Pages.HomePage" />

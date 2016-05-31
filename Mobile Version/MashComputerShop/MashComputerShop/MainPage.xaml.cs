@@ -89,7 +89,6 @@ namespace MashComputerShop
         private void UserTab_userProfileBtnClicked(object sender, RoutedEventArgs e)
         {
             userProfileSelector.IsSelected = true;
-            //mainContentFrame.Navigate(typeof(UserProfile), ShoppingCartVM.UserVM);
             ShoppingCartVM.UserVM.OpenUserProfile.Execute(null);
             changeTopbarTitle(userProfileSelectorLabel.Text);
         }

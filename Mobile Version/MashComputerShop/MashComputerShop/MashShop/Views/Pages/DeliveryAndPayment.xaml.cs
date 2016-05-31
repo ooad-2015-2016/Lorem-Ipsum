@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Maps;
@@ -36,20 +37,38 @@ namespace MashComputerShop.MashShop.Views.Pages
         {
             try
             {
+                // odabran PayPal
                 if (paymentMethod.SelectedIndex == 0)
                 {
                     payPalTab.Visibility = Visibility.Visible;
-                    //creditCard.Focus(FocusState.Programmatic);
+                    creditCardTab.Visibility = Visibility.Collapsed;
+                }
+                else if( paymentMethod.SelectedIndex == 1 )
+                {
+                    payPalTab.Visibility = Visibility.Collapsed;
+                    creditCardTab.Visibility = Visibility.Visible;
+
+                    // fokusiramo na tekstbox u koji se treba da učita kod kreditne kartice
+                    creditCardCode.Focus(FocusState.Programmatic);
                 }
                 else
                 {
                     payPalTab.Visibility = Visibility.Collapsed;
+                    creditCardTab.Visibility = Visibility.Collapsed;
                 }
             }
             catch(Exception err)
             {
-
+                var dialog = new MessageDialog("Došlo je do greške.");
+                dialog.ShowAsync();
             }
         }
+
+        // u ovom eventu potrebno je prvoesti neku vrstu validacije koda dobivenog provlacenjem kreditne kartice kroz citac 
+        private void validateCreditCardButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }
