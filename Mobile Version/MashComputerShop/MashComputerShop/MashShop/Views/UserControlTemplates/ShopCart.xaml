@@ -1,0 +1,71 @@
+﻿<UserControl
+    x:Class="MashComputerShop.MashShop.Views.UserControlTemplates.ShopCart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MashComputerShop.MashShop.Views.UserControlTemplates"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Border x:Name="FooterDrawer" 
+                Grid.Row="2" 
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch" 
+                BorderBrush="#d9dadd" 
+                BorderThickness="1" 
+                Background="#fbfbfc" 
+                Padding="0,1,0,0">
+
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- TextBlock za prikaz stanja u korpi -->
+            <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+                <TextBlock Name="productCount"
+                        RelativePanel.AlignLeftWithPanel="True"
+                        RelativePanel.AlignVerticalCenterWithPanel="True"
+                        RelativePanel.LeftOf="showSoppingCart"
+                        Margin="20, 0, 0, 0"
+					    FontFamily="Roboto"
+					    FontWeight="Light"
+                        Foreground="#59626d">
+                        
+                        <Run>Ukupno </Run>
+                        <Run Text="{Binding Path=ShoppingCart.Items.Count, Mode=TwoWay}"/>
+                        <Run> proizvoda u korpi.</Run>
+
+                </TextBlock>
+
+                <HyperlinkButton 
+                        Name="showSoppingCart"                    
+                        RelativePanel.AlignRightWithPanel="True"
+                        RelativePanel.AlignVerticalCenterWithPanel="True"
+					    FontFamily="Roboto"
+					    FontWeight="Normal" 
+					    Content="Pregledaj korpu"/>
+
+            </RelativePanel>
+
+            <!-- TextBlock za prikaz ukupne cijene -->
+            <TextBlock x:Name="totalPrice" 
+					Grid.Column="2" 
+					HorizontalAlignment="Center"  
+					VerticalAlignment="Center" 
+					FontFamily="Roboto" 
+					FontWeight="Light"
+                    Foreground="#59626d">
+                    
+                    <Run>Ukupna cijena: </Run>
+                    <Run Text="{Binding Path=ShoppingCart.TotalCartPrice, Mode=TwoWay}"/>
+                    <Run>$</Run>
+
+            </TextBlock>
+
+        </Grid>
+    </Border>
+</UserControl>
