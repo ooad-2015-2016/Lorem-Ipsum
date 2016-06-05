@@ -77,28 +77,18 @@ All rights reserved
 
 ###Project Summary
 **Eksterni uređaji:**
--Kamera
-MashComputerShop\MashShop\ViewModels\CameraVM.cs
-MashComputerShop\MashShop\Views\Pages\UserProfilePages\ProfileInfo.xaml
+- Kamera @MashComputerShop\MashShop\ViewModels\CameraVM.cs @MashComputerShop\MashShop\Views\Pages\UserProfilePages\ProfileInfo.xaml
 
--GPS
-MashComputerShop\MashShop\ViewModels\GpsVM.cs
-MashComputerShop\MashShop\Views\Pages\DeliveryAndPayment
+- GPS @MashComputerShop\MashShop\ViewModels\GpsVM.cs @MashComputerShop\MashShop\Views\Pages\DeliveryAndPayment
 
--Magnetni čitač kartica
-MashComputerShop\MashShop\Views\Pages\DeliveryAndPayment
+- Magnetni čitač kartica @MashComputerShop\MashShop\Views\Pages\DeliveryAndPayment
 
 **Validacija je ispostovana na formama:**
--Forma za registraciju korisnika
-MashComputerShop\MashShop\ViewModels\UserVM.cs
-MashComputerShop\MashShop\Views\Pages\UserProfilePages\UserLogin
-MashComputerShop\MashShop\Views\Pages\UserProfilePages\UserRegistration
+- Forma za registraciju korisnika @MashComputerShop\MashShop\ViewModels\UserVM.cs @MashComputerShop\MashShop\Views\Pages\UserProfilePages\UserLogin @MashComputerShop\MashShop\Views\Pages\UserProfilePages\UserRegistration
 
 **Prilagodjavanje Windows Phone:**
 - Aplikacija je u potpunosti prilagodjena za Windows Phone. U paketu "Mobile Version" se nalazi aplikacija koju je jednostavnije pokrenuti na mobitelu jer nije potrebno pokretati dodatnu web aplikaciju.
 
 **Web servis:**
-- Klasa za rad sa web servisom i bazom 
-MashComputerShop\MashShop\Models\Servis\WebService.cs
-- Koristenje klase za web servis da rad sa korisnickim profilima
-MashComputerShop\MashShop\ViewModels\UserVM.cs
+- Klasa za rad sa web servisom i bazom @MashComputerShop\MashShop\Models\Servis\WebService.cs
+- Koristenje klase za web servis da rad sa korisnickim profilima @MashComputerShop\MashShop\ViewModels\UserVM.cs
