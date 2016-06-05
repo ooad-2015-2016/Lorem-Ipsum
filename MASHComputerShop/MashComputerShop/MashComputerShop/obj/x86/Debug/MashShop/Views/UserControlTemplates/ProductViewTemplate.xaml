@@ -1,0 +1,56 @@
+﻿<UserControl x:ConnectionId='1'
+    x:Class="MashComputerShop.MashShop.Views.UserControlTemplates.ProductViewTemplate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MashComputerShop.MashShop.Views.UserControlTemplates"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Border x:ConnectionId='2' x:Name="outline" 
+            BorderBrush="#d9dadd" 
+            BorderThickness="1" 
+            Padding="0,0,0,1" 
+            Margin="1" 
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Stretch">
+
+        <Grid Background="#fbfbfc" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="14"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image x:ConnectionId='3' Name="productImage"                                                      Grid.Row="1" Grid.Column="1"/>
+
+            <TextBlock x:ConnectionId='4' Name="productName" 
+                                                                     
+                       FontFamily="Roboto Regular" 
+                       Foreground="#767c83" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"
+                       Grid.Row="2" Grid.Column="1"/>
+
+            <TextBlock x:ConnectionId='5' Name="productPrice"
+                                                                      
+                       FontFamily="Roboto Regular"
+                       Foreground="#5aa2ea"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" 
+                       Grid.Row="3" Grid.Column="1"/>
+
+        </Grid>
+    </Border>
+</UserControl>
+

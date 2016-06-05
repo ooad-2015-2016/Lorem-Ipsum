@@ -1,0 +1,114 @@
+﻿<Page
+    x:Class="MashComputerShop.MashShop.Views.Pages.Checkout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MashComputerShop.MashShop.Views.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#f2f3f6">
+
+        <!-- Adaptive Layout Triggers -->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:ConnectionId='1' x:Name="checkoutVisualStateGroup">
+
+                <!-- Page Layout for mobile screen -->
+                <VisualState x:ConnectionId='2' x:Name="MobileState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+
+                    <VisualState.Setters>
+                        <Setter Target="paymentTitle.FontSize" Value="18" />
+                        <Setter Target="paymentTitle.Margin" Value="0,0,0,5" />
+                        <Setter Target="paymentSubtitle.FontSize" Value="12" />
+                        <Setter Target="centralCol.Width" Value="*" />
+                        <Setter Target="leftCol.Width" Value="5" />
+                        <Setter Target="rightCol.Width" Value="5" />
+                    </VisualState.Setters>
+                </VisualState>
+
+                <!-- Page Layout for desktop screen sizes -->
+                <VisualState x:ConnectionId='3' x:Name="DesktopState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1000"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:ConnectionId='4' x:Name="leftCol" Width="*" />
+            <ColumnDefinition x:ConnectionId='5' x:Name="centralCol" Width="5*" />
+            <ColumnDefinition x:ConnectionId='6' x:Name="rightCol" Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Title bar -->
+        <Grid x:ConnectionId='7' x:Name="internalTitleGrid" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackPanel x:ConnectionId='11' x:Name="paymentSelector" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <TextBlock x:ConnectionId='12' x:Name="paymentTitle" Text="Pregled računa i kupovina" FontFamily="Roboto" FontSize="20" FontWeight="Normal" Foreground="#59626d" Margin="0,0,0,20" />
+                <TextBlock x:ConnectionId='13' x:Name="paymentSubtitle" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius tempor incididunt ut labore et dolore magna aliqua." FontFamily="Roboto" FontSize="14" FontWeight="Light" Foreground="#767c83" TextWrapping="Wrap" />
+            </StackPanel>
+        </Grid>
+
+
+        <!-- Receit List -->
+        <ListView x:ConnectionId='8' x:Name="receitList"
+            Grid.Row="1" Grid.Column="1" 
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            ItemsSource="{Binding Path=ItemsToSell, Mode=TwoWay}">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <RelativePanel>
+                        <TextBlock x:Name="productName" RelativePanel.AlignLeftWithPanel="True" Text="{Binding Path=Product.Name, Mode=TwoWay}" />
+                        <TextBlock RelativePanel.RightOf="productName" RelativePanel.LeftOf="productTotalPrice">
+                            <Run Text="Količina: "/>
+                            <Run Text="{Binding Path=Quantity}" />
+                        </TextBlock>
+                        <TextBlock x:Name="productTotalPrice" RelativePanel.AlignRightWithPanel="True">
+                            <Run Text="Cijena: "/>
+                            <Run Text="{Binding Path=Price}" />
+                        </TextBlock>
+                    </RelativePanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="2" Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center">
+
+            <Button x:ConnectionId='9' Name="backBtn"
+                    Margin="0,0,20,0"
+                    Style="{StaticResource TileButton}"
+                    Content="Nazad"
+                                         />
+
+            <!-- Finish Button -->
+            <Button x:ConnectionId='10' x:Name="finishButton"     
+                Style="{StaticResource TileButton}"
+                Content="Završi kupovinu"
+                Command="{Binding Path=FinalizeShopping}"/>
+        </StackPanel>
+
+    </Grid>
+</Page>
+
